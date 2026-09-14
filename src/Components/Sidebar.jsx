@@ -13,7 +13,7 @@ export const Sidebar = () => {
       <div className="bg-bg_02 h-[15%] rounded flex flex-col justify-around">
         {/* Home */}
         <div className="cursor-pointer hover:bg-bg_03 transition-all duration-300 rounded-2xl">
-          <div className='flex items-center gap-3 p-5 pl-7.5'>
+          <div className={`flex items-center gap-3 p-5 pl-7.5 ${collapsed ? '' : ''} `}>
             <img className="w-6" src={assets.icons.home_icon} alt="Home" />
             <p className={`font-bold ${collapsed ? 'hidden' : 'block'}`}>Home</p>
           </div>
