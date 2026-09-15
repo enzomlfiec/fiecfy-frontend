@@ -3,31 +3,30 @@ import React from 'react'
 
 import { assets } from '../assets/assets'
 
-export const Sidebar = () => {
+const Sidebar = () => {
 
   var [hovering, setHovering] = React.useState(false)
   var [collapsed, setCollapsed] = React.useState(false)
 
   return (
     <div className={`m-2 select-none min-w-25  h-full p-2 flex-col gap-2 hidden lg:flex overflow-hidden ${collapsed ? 'w-[5%] text-[rgba(255,255,255,0.1)]' : 'w-[25%] text-[rgba(255,255,255,1.0)]'} transition-all duration-300`}>
-      <div className="bg-bg_02 h-[15%] rounded flex flex-col justify-around">
-        {/* Home */}
-        <div className="cursor-pointer hover:bg-bg_03 transition-all duration-300 rounded-2xl">
-          <div className={`flex items-center gap-3 p-5 pl-7.5 ${collapsed ? '' : ''} `}>
-            <img className="w-6" src={assets.icons.home_icon} alt="Home" />
-            <p className={`font-bold ${collapsed ? 'hidden' : 'block'}`}>Home</p>
-          </div>
-        </div>
-        {/* Search */}
-        <div className="cursor-pointer hover:bg-bg_03 transition-all duration-300 rounded-2xl">
-          <div className='flex items-center gap-3 p-5 pl-7.5'>
-            <img className="w-6" src={assets.icons.search_icon} alt="Search" />
-            <p className={`font-bold ${collapsed ? 'hidden' : 'block'}`}>Search</p>
-          </div>
+      {/* Home */}
+      <div className="bg-bg_02 hover:bg-bg_03 rounded-2xl cursor-pointer transition-all duration-300 flex flex-col justify-around">
+        <div className={`flex items-center gap-3 p-5 pl-7.5 ${collapsed ? '' : ''} `}>
+          <img className="w-6" src={assets.icons.home_icon} alt="Home" />
+          <p className={`font-bold ${collapsed ? 'hidden' : 'block'}`}>Home</p>
         </div>
       </div>
-      <div className="bg-bg_02 h-[85%] rounded">
-        <div onMouseEnter={() => setHovering(true)} onMouseLeave={() => setHovering(false)} className={`cursor-pointer ${hovering ? 'pl-2' : 'pl-0'} hover:bg-bg_03 transition-all duration-300 rounded-2xl`}>
+      {/* Search */}
+      <div className="bg-bg_02 hover:bg-bg_03 rounded-2xl flex flex-col justify-around cursor-pointer transition-all duration-300">
+        <div className='flex items-center gap-3 p-5 pl-7.5'>
+          <img className="w-6" src={assets.icons.search_icon} alt="Search" />
+          <p className={`font-bold ${collapsed ? 'hidden' : 'block'}`}>Search</p>
+        </div>
+      </div>
+      {/* Your Library */}
+      <div className="bg-bg_02 h-[85%] rounded-2xl">
+        <div onMouseEnter={() => setHovering(true)} onMouseLeave={() => setHovering(false)} className={`cursor-pointer ${hovering ? 'pl-2' : 'pl-0'} hover:bg-bg_03 rounded-2xl transition-all duration-300`}>
           <div className={`flex items-center justify-between ${hovering ? 'pl-0' : 'pl-7.5'}`}>
             <div className={`flex items-center justify-between w-full pr-6 transition-all ${hovering ? 'gap-3' : 'gap-0'}`}>
               <div className={` pt-4 pb-4 flex items-center gap-3 w-full justify-baseline ${hovering ? 'pr-0' : 'pr-0'}`} onClick={() => setCollapsed(!collapsed)}>
