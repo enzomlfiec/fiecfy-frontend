@@ -5,8 +5,8 @@ import { assets } from '../assets/assets'
 
 const Sidebar = () => {
 
-  var [hovering, setHovering] = React.useState(false)
-  var [collapsed, setCollapsed] = React.useState(false)
+  let [hovering, setHovering] = React.useState(false)
+  let [collapsed, setCollapsed] = React.useState(false)
 
   return (
     <div className={`m-2 select-none min-w-25  h-full p-2 flex-col gap-2 hidden lg:flex overflow-hidden ${collapsed ? 'w-[5%] text-[rgba(255,255,255,0.1)]' : 'w-[25%] text-[rgba(255,255,255,1.0)]'} transition-all duration-300`}>

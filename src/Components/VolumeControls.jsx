@@ -1,0 +1,40 @@
+import React from 'react'
+import { assets } from '../assets/assets';
+
+const VolumeControls = ({setVolume }) => {
+    const [sliderValue, setSliderValue] = React.useState(50);
+    let [hovering, setHovering] = React.useState(false)
+
+    const handleChange = (event) => {
+        setSliderValue(event.target.value);
+        setVolume(Number(event.target.value))
+    };
+
+    // React.useEffect(() => {
+    //   ;
+    // },[sliderValue,audioRef])
+    
+
+    return (
+        <div className='flex flex-row align-middle items-center gap-5 w-[10vw]'>
+            <button className=''>
+                <img className='w-8' src={assets.icons.volume_icon}/>
+            </button>
+            <input
+                type="range"
+                min="0"
+                max="100"
+                value={sliderValue}
+
+                style={{
+                    background: `linear-gradient(to right, ${hovering ? "var(--color-p_0)" : "var(--color-abw_1)"} ${sliderValue}%, var(--color-fg_0) ${sliderValue}%)`
+                }}
+                className={`volumeBar w-full h-2 bg-fg_0 rounded-lg appearance-none cursor-pointer ${hovering ? "accent-p_0" : "accent-abw_1"} transition-all duration-200`}
+                onMouseEnter={() => setHovering(true)} onMouseLeave={() => setHovering(false)}
+                onChange={handleChange}
+            />
+        </div>
+    )
+}
+
+export default VolumeControls

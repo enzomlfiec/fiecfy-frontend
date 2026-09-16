@@ -26,26 +26,30 @@ import spotify_logo from './icons/spotify_logo.png'
 import clock_icon from './icons/clock_icon.png'
 import stack_icon_alt from './icons/stack_alt.png'
 
-import img1 from './images/img1.jpg'
-import img2 from './images/img2.jpg'
-import img3 from './images/img3.jpg'
-import img4 from './images/img4.jpg'
-import img5 from './images/img5.jpg'
-import img6 from './images/img6.jpg'
-import img7 from './images/img7.jpg'
-import img8 from './images/img8.jpg'
-import img9 from './images/img9.jpg'
-import img10 from './images/img10.jpg'
-import img11 from './images/img11.jpg'
-import img12 from './images/img12.jpg'
-import img13 from './images/img13.jpg'
-import img14 from './images/img14.jpg'
-import img15 from './images/img15.jpg'
-import img16 from './images/img16.jpg'
+import img1 from './images/albums/img1.jpg'
+import img2 from './images/albums/img2.jpg'
+import img3 from './images/albums/img3.jpg'
+import img4 from './images/albums/img4.jpg'
+import img5 from './images/albums/img5.jpg'
+import img6 from './images/albums/img6.jpg'
+import img7 from './images/albums/img7.jpg'
+// import img8 from './images/albums/img8.jpg'
+// import img9 from './images/albums/img9.jpg'
+// import img10 from './images/albums/img10.jpg'
+// import img11 from './images/albums/img11.jpg'
+// import img12 from './images/albums/img12.jpg'
+// import img13 from './images/albums/img13.jpg'
+// import img14 from './images/albums/img14.jpg'
+// import img15 from './images/albums/img15.jpg'
+// import img16 from './images/albums/img16.jpg'
+
+import vinyl from './images/vinyl.png'
 
 import song1 from './music/song1.mp3'
 import song2 from './music/song2.mp3'
 import song3 from './music/song3.mp3'
+
+import penumbra from './music/albums/5/penumbra.mp3'
 
 const icons = {
   bell_icon,
@@ -86,22 +90,18 @@ const albumCovers = {
   img5,
   img6,
   img7,
-  img8,
-  img9,
-  img10,
-  img11,
-  img12,
-  img13,
-  img14,
-  img15,
-  img16,
+  vinyl,
 }
+export {albumCovers}
 
 const music = {
   song1,
   song2,
   song3,
+  penumbra,
 }
+
+export { music }
 
 export const assets = {
   icons,
@@ -115,7 +115,7 @@ export const albumsData = [
     artist: 'femtanyl',
     image: albumCovers.img1,
     desc: 'CHASER by femtanyl',
-    bgColor: '#3b111f',
+    bgColor: '#191919',
   },
 
   {
@@ -124,7 +124,7 @@ export const albumsData = [
     artist: 'ミドリ',
     image: albumCovers.img2,
     desc: 'Aratamemashite, Hajimemashite, Midori desu by Midori',
-    bgColor: '#253b2a',
+    bgColor: '#FFFFFF',
   },
 
   {
@@ -133,7 +133,7 @@ export const albumsData = [
     artist: 'Churgney Gurgney',
     image: albumCovers.img3,
     desc: 'Sinister Minds by Churgney Gurgney',
-    bgColor: '#241b2f',
+    bgColor: '#191919',
   },
 
   {
@@ -142,7 +142,7 @@ export const albumsData = [
     artist: 'Toby Fox',
     image: albumCovers.img4,
     desc: 'My favorite Deltarune tracks',
-    bgColor: '#1b2745',
+    bgColor: '#FF0000',
   },
 
   {
@@ -151,7 +151,7 @@ export const albumsData = [
     artist: 'SEGA Sound Team',
     image: albumCovers.img5,
     desc: 'Selected favorites from Yakuza 0',
-    bgColor: '#472018',
+    bgColor: '#A51F28',
   },
 
   {
@@ -160,7 +160,7 @@ export const albumsData = [
     artist: 'SEGA Sound Team',
     image: albumCovers.img6,
     desc: 'Selected favorites from Judgment',
-    bgColor: '#172d3d',
+    bgColor: '#645540',
   },
 ]
 

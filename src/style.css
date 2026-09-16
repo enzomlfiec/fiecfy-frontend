@@ -1,13 +1,12 @@
 @import "tailwindcss";
 
-html {
-  background-color: black;
-}
 
+/* Dark Theme */
 @theme {
   --color-p_0: #2dd76a;
   --color-p_01: #1db954;
   --color-p_02: #1aa34a;
+  --color-p_03: #117032;
 
   --color-bg_0: #0f0f0f;
   --color-bg_01: #111111;
@@ -18,34 +17,99 @@ html {
   --color-fg_01: #555555;
   --color-fg_02: #676767;
   --color-fg_03: #888888;
+
+  --color-abw_0: #000000;
+  --color-abw_1: #ffffff;
+
+  /* Vinyl */
+
+  --animate-vinyl: spin 5s linear infinite;
 }
+
+html {
+  background-color: var(--color-abw_0);
+}
+
+.volumeBar {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.volumeBar::-webkit-slider-thumb {
+  position: relative;
+  left: 0.1vw;
+  appearance: none;
+  -webkit-appearance: none;
+  width: 0px;
+  height: 0px;
+  border-radius: 50%;
+  background-color: var(--color-abw_1);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.volumeBar:hover::-webkit-slider-thumb {
+  opacity: 1;
+  width: 16px;
+  /* background: var(--color-p_0); */
+  /* opacity: 0; */
+  height: 16px;
+}
+
+.volumeBar::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--color-abw_1);
+  opacity: 100;
+  transition: opacity 0.2s;
+}
+
+.volumeBar:hover::-moz-range-thumb {
+  opacity: 1;
+}
+
+/* ProgressBar */
 
 .progressBar {
   appearance: none;
   -webkit-appearance: none;
-}
-
-.progressBar:hover {
-  appearance: none;
-  -webkit-appearance: none;
-  accent-color: var(--color-p_0);
   cursor: pointer;
 }
 
 .progressBar::-webkit-slider-thumb {
+  position: relative;
+  left: 0.1vw;
+  appearance: none;
   -webkit-appearance: none;
-  visibility: hidden;
+  width: 0px;
+  height: 0px;
+  border-radius: 50%;
+  background-color: var(--color-abw_1);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.progressBar:hover::-webkit-slider-thumb {
+  opacity: 1;
+  width: 16px;
+  /* background: var(--color-p_0); */
+  height: 16px;
 }
 
 .progressBar::-moz-range-thumb {
-  visibility: hidden;
+  width: 16px;
+  height: 16px;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--color-abw_1);
+  opacity: 0;
+  transition: opacity 0.2s;
 }
 
-.progressBar::-webkit-slider-thumb:hover {
-  -webkit-appearance: auto;
-  visibility: visible;
+.progressBar:hover::-moz-range-thumb {
+  opacity: 1;
 }
 
-.progressBar::-moz-range-thumb:hover {
-  visibility: visible;
-}
