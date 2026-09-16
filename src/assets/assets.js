@@ -92,7 +92,7 @@ const albumCovers = {
   img7,
   vinyl,
 }
-export {albumCovers}
+export { albumCovers }
 
 const music = {
   song1,
@@ -648,145 +648,141 @@ export const songsData = [
   {
     id: 46,
     name: 'Force Addiction',
-    artist: 'SEGA SOUND TEAM, 庄司 英徳',
+    artist: 'SEGA SOUND TEAM,庄司 英徳',
     image: albumCovers.img5,
     file: music.forceAddiction,
     desc: 'Yakuza 0 — Favorites',
-    duration: '...',
+    duration: '2:27',
   },
-
   {
     id: 47,
     name: 'Parry Addiction',
-    artist: 'SEGA SOUND TEAM, 庄司 英徳',
+    artist: 'SEGA SOUND TEAM,庄司 英徳',
     image: albumCovers.img5,
     file: music.parryAddiction,
     desc: 'Yakuza 0 — Favorites',
-    duration: '...',
+    duration: '3:52',
   },
-
   {
     id: 48,
     name: 'Crash Addiction',
-    artist: 'SEGA SOUND TEAM, 庄司 英徳',
+    artist: 'SEGA SOUND TEAM,庄司 英徳',
     image: albumCovers.img5,
     file: music.crashAddiction,
     desc: 'Yakuza 0 — Favorites',
-    duration: '...',
+    duration: '3:05',
   },
-
   {
     id: 49,
     name: 'Receive You ~Tech Trance Arrangement~',
-    artist: 'SEGA SOUND TEAM, 庄司 英徳',
+    artist: 'SEGA SOUND TEAM,庄司 英徳',
     image: albumCovers.img5,
     file: music.receiveYouTechTrance,
     desc: 'Yakuza 0 — Favorites',
-    duration: '...',
+    duration: '3:42',
   },
-
   {
     id: 50,
     name: 'Trouble Shooting Star',
-    artist: 'SEGA SOUND TEAM, ZENTA',
+    artist: 'SEGA SOUND TEAM,ZENTA',
     image: albumCovers.img5,
     file: music.troubleShootingStar,
     desc: 'Yakuza 0 — Favorites',
-    duration: '...',
+    duration: '2:31',
   },
-
   {
     id: 51,
     name: 'Customer Creed',
-    artist: 'SEGA SOUND TEAM, 庄司 英徳',
+    artist: 'SEGA SOUND TEAM,庄司 英徳',
     image: albumCovers.img5,
     file: music.customerCreed,
     desc: 'Yakuza 0 — Favorites',
-    duration: '...',
+    duration: '2:37',
   },
-
   {
     id: 52,
     name: 'One-Eyed Slugger',
-    artist: 'SEGA SOUND TEAM, 庄司 英徳',
+    artist: 'SEGA SOUND TEAM,庄司 英徳',
     image: albumCovers.img5,
     file: music.oneEyedSlugger,
     desc: 'Yakuza 0 — Favorites',
-    duration: '...',
+    duration: '3:42',
   },
-
   {
     id: 53,
     name: 'One-Eyed Dancer',
-    artist: 'SEGA SOUND TEAM, 庄司 英徳',
+    artist: 'SEGA SOUND TEAM,庄司 英徳',
     image: albumCovers.img5,
     file: music.oneEyedDancer,
     desc: 'Yakuza 0 — Favorites',
-    duration: '...',
+    duration: '3:38',
   },
-
   {
     id: 54,
     name: 'Receive You The Subtype',
-    artist: 'SEGA SOUND TEAM, 庄司 英徳',
+    artist: 'SEGA SOUND TEAM,庄司 英徳',
     image: albumCovers.img5,
     file: music.receiveYouTheSubtype,
     desc: 'Yakuza 0 — Favorites',
-    duration: '...',
+    duration: '3:52',
   },
-
   {
     id: 55,
     name: 't u s k',
-    artist: 'SEGA SOUND TEAM, 庄司 英徳',
+    artist: 'SEGA SOUND TEAM,庄司 英徳',
     image: albumCovers.img5,
     file: music.tusk,
     desc: 'Yakuza 0 — Favorites',
-    duration: '...',
+    duration: '4:00',
   },
-
   {
     id: 56,
     name: 'Pledge of Demon',
-    artist: 'SEGA SOUND TEAM, 庄司 英徳',
+    artist: 'SEGA SOUND TEAM,庄司 英徳',
     image: albumCovers.img5,
     file: music.pledgeOfDemon,
     desc: 'Yakuza 0 — Favorites',
-    duration: '...',
+    duration: '3:56',
   },
-
   {
     id: 57,
     name: 'Oath of Enma',
-    artist: 'SEGA SOUND TEAM, 庄司 英徳',
+    artist: 'SEGA SOUND TEAM,庄司 英徳',
     image: albumCovers.img5,
     file: music.oathOfEnma,
     desc: 'Yakuza 0 — Favorites',
-    duration: '...',
+    duration: '3:34',
   },
-
   {
     id: 58,
     name: 'With Vengeance',
-    artist: 'SEGA SOUND TEAM, 庄司 英徳',
+    artist: 'SEGA SOUND TEAM,庄司 英徳',
     image: albumCovers.img5,
     file: music.withVengeance,
     desc: 'Yakuza 0 — Favorites',
-    duration: '...',
+    duration: '3:33',
   },
-
   {
     id: 59,
     name: 'Two Dragons',
-    artist: 'SEGA SOUND TEAM, 庄司 英徳',
+    artist: 'SEGA SOUND TEAM,庄司 英徳',
     image: albumCovers.img5,
     file: music.twoDragons,
     desc: 'Yakuza 0 — Favorites',
-    duration: '...',
+    duration: '4:33',
+  },
+  {
+    id: 60,
+    name: 'Fiercest Warrior ver.0',
+    artist: 'SEGA SOUND TEAM,庄司 英徳',
+    image: albumCovers.img5,
+    file: music.fiercestWarrior,
+    desc: 'Yakuza 0 — Favorites',
+    duration: '2:49',
   },
 
   {
-    id: 60,
+    id: 61,
     name: 'Random Fire',
     artist: 'Hidenori Shoji',
     image: albumCovers.img6,
@@ -796,7 +792,7 @@ export const songsData = [
   },
 
   {
-    id: 61,
+    id: 62,
     name: 'Drumfire',
     artist: 'Hidenori Shoji',
     image: albumCovers.img6,
@@ -806,7 +802,7 @@ export const songsData = [
   },
 
   {
-    id: 62,
+    id: 63,
     name: 'My Own Style',
     artist: 'Saori Yoshida',
     image: albumCovers.img6,
@@ -816,7 +812,7 @@ export const songsData = [
   },
 
   {
-    id: 63,
+    id: 64,
     name: 'Λ (lambda)',
     artist: '83key',
     image: albumCovers.img6,
@@ -826,7 +822,7 @@ export const songsData = [
   },
 
   {
-    id: 64,
+    id: 65,
     name: 'Hyenas Wheezing',
     artist: 'Hyd Lunch',
     image: albumCovers.img6,
@@ -836,7 +832,7 @@ export const songsData = [
   },
 
   {
-    id: 65,
+    id: 66,
     name: 'Rake Your Inside',
     artist: '83key',
     image: albumCovers.img6,
@@ -846,7 +842,7 @@ export const songsData = [
   },
 
   {
-    id: 66,
+    id: 67,
     name: 'Destination',
     artist: 'Yuri Fukuda',
     image: albumCovers.img6,
@@ -856,7 +852,7 @@ export const songsData = [
   },
 
   {
-    id: 67,
+    id: 68,
     name: 'Penumbra',
     artist: 'Hidenori Shoji',
     image: albumCovers.img6,

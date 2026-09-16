@@ -9,8 +9,20 @@ if (React) {
 }
 
 const App = () => {
+  let audioRef = React.useRef(null);
+  let [currentSongIndex, setCurrentSongIndex] = React.useState(68);
+  let [isPlaying, setIsPlaying] = React.useState(false);
+  const [isFancyOpen, setFancy] = React.useState(false)
 
-  let [currentSongIndex, setCurrentSongIndex] = React.useState(67);
+  React.useEffect(() => {
+    if(!isPlaying){
+      audioRef.current.pause()
+    }else{
+      audioRef.current.play()
+    }
+  }, [isPlaying,audioRef])
+  
+
   let [CurrentSongData, setCurrentSongData] = React.useState(
     {
       id: songsData[currentSongIndex].id,
@@ -33,7 +45,12 @@ const App = () => {
           CurrentSongData={CurrentSongData}
           setCurrentSongData={setCurrentSongData}
           currentSongIndex={currentSongIndex}
-          setCurrentSongIndex={setCurrentSongIndex} />
+          setCurrentSongIndex={setCurrentSongIndex}
+          isFancyOpen={isFancyOpen}
+          setFancy={setFancy}
+          isPlaying={isPlaying}
+          setIsPlaying={setIsPlaying}
+        />
         <div className="h-[90%] flex">
           <Sidebar />
         </div>
@@ -42,6 +59,11 @@ const App = () => {
           setCurrentSongData={setCurrentSongData}
           currentSongIndex={currentSongIndex}
           setCurrentSongIndex={setCurrentSongIndex}
+          isFancyOpen={isFancyOpen}
+          setFancy={setFancy}
+          isPlaying={isPlaying}
+          setIsPlaying={setIsPlaying}
+          audioRef={audioRef}
         />
       </div>
     </div>

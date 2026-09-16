@@ -11,16 +11,14 @@ import VolumeControls from './VolumeControls'
 // desc: 'x',
 // bgColor: '#x',
                                 ``
-const PlayerBar = ({CurrentSongData, setCurrentSongData, currentSongIndex, setCurrentSongIndex}) => {
+const PlayerBar = ({CurrentSongData, setCurrentSongData, currentSongIndex, setCurrentSongIndex,isFancyOpen,setFancy,isPlaying,setIsPlaying,audioRef}) => {
     
     let [volume, setVolume] = React.useState(100)
-    let audioRef = React.useRef(null);
-
     React.useEffect(() => {
         if (audioRef.current) {
             audioRef.current.volume = volume / 500;
         }
-    }, [volume]);
+    }, [volume,audioRef]);
 
     return (
         <>
@@ -28,8 +26,8 @@ const PlayerBar = ({CurrentSongData, setCurrentSongData, currentSongIndex, setCu
             <div id="player" className="bg-abw_0 h-[10%] flex items-center justify-between text-abw_1 px-4">
                 <div id="SongInfo" className="hidden lg:flex item-center gap-4 w-[20vw]">
                     <div className="group">
-                        <img className="absolute bottom-[2%] left-[1.2%] items-center w-16 h-16 rounded cursor-pointer opacity-0 group-hover:opacity-100 transition-all duration-300" src={assets.icons.zoom_icon} alt="uparrow" onClick={(e) => e.stopPropagation()} />
-                        <img className="items-center w-24 h-24 rounded cursor-pointer hover:opacity-30 hover:m-0 transition-all duration-300" src={CurrentSongData.image} alt="Album Cover" />
+                        <img className="absolute bottom-[2%] left-[1.2%] items-center w-16 h-16 rounded cursor-pointer opacity-0 group-hover:opacity-100 transition-all duration-300" src={assets.icons.zoom_icon} alt="uparrow" onClick={() =>console.log(setFancy(!isFancyOpen))} />
+                        <img className="items-center w-24 h-24 rounded cursor-pointer hover:opacity-30 hover:m-0 transition-all duration-300" src={CurrentSongData.image} alt="Album Cover" onClick={() =>setFancy(!isFancyOpen)}/>
                     </div>
 
                     <div className='flex justify-center flex-col'>
@@ -46,7 +44,10 @@ const PlayerBar = ({CurrentSongData, setCurrentSongData, currentSongIndex, setCu
                         setCurrentSongData={setCurrentSongData}
                         currentSongIndex={currentSongIndex}
                         setCurrentSongIndex={setCurrentSongIndex}
-                        audioRef={audioRef} />
+                        audioRef={audioRef}
+                        isPlaying={isPlaying}
+                        setIsPlaying={setIsPlaying}
+                        />
                 </div>
                 <div id="volumeControl">
                     <VolumeControls volume={volume} setVolume={setVolume} />

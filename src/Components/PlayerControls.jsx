@@ -3,9 +3,8 @@ import {songsData, assets } from '../assets/assets'
 import PlayerProgressBar from './PlayerProgressBar'
 
 
-const PlayerControls = ({ CurrentSongData, setCurrentSongData, currentSongIndex, setCurrentSongIndex,audioRef }) => {
+const PlayerControls = ({ CurrentSongData, setCurrentSongData, currentSongIndex, setCurrentSongIndex,audioRef,isPlaying, setIsPlaying }) => {
     let [progress, setProgress] = React.useState(0);
-    let [isPlaying, setIsPlaying] = React.useState(false)
     let [inShuffle, setInShuffle] = React.useState(false)
     let [isLooping, setIsLooping] = React.useState(false)
     // let audio = new Audio(music.penumbra);
@@ -52,9 +51,10 @@ const PlayerControls = ({ CurrentSongData, setCurrentSongData, currentSongIndex,
                         audioRef.current.currentTime = 0
                     } else {
                         changeSong(currentSongIndex - 1);
-                        audioRef.current.pause();
-                        audioRef.current.removeAttribute("src");
-                        audioRef.current.load();
+                        audioRef.current.currentTime = 0
+                        // audioRef.current.pause();
+                        // audioRef.current.removeAttribute("src");
+                        // audioRef.current.load();
                     }
                 }}>
                     <img className='w-4 cursor-pointer opacity-50 hover:opacity-100 hover:w-4.25 transition-all duration-200'
@@ -76,9 +76,10 @@ const PlayerControls = ({ CurrentSongData, setCurrentSongData, currentSongIndex,
                 </button>
 
                 <button id="next" onClick={() => {
-                    audioRef.current.pause();
-                    audioRef.current.removeAttribute("src");
-                    audioRef.current.load();
+                    // audioRef.current.pause();
+                    audioRef.current.currentTime = 0
+                    // audioRef.current.removeAttribute("src");
+                    // audioRef.current.load();
                     changeSong(currentSongIndex + 1)
                 }}>
                     <img className='w-4 cursor-pointer opacity-50 hover:opacity-100 hover:w-4.25 transition-all duration-200' src={assets.icons.next_icon} />
