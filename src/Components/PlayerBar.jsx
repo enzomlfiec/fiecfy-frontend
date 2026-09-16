@@ -25,8 +25,8 @@ const PlayerBar = ({CurrentSongData, setCurrentSongData, currentSongIndex, setCu
             <audio ref={audioRef} src={music.penumbra} volume="0"></audio>
             <div id="player" className="bg-abw_0 h-[10%] flex items-center justify-between text-abw_1 px-4">
                 <div id="SongInfo" className="hidden lg:flex item-center gap-4 w-[20vw]">
-                    <div className="group">
-                        <img className="absolute bottom-[2%] left-[1.2%] items-center w-16 h-16 rounded cursor-pointer opacity-0 group-hover:opacity-100 transition-all duration-300" src={assets.icons.zoom_icon} alt="uparrow" onClick={() =>console.log(setFancy(!isFancyOpen))} />
+                    <div className="group flex">
+                        <img className="absolute bottom-[2%] left-[1.2%] items-center w-16 h-16 max-w-16 min-w-16 rounded cursor-pointer opacity-0 group-hover:opacity-100 transition-all duration-300" src={assets.icons.zoom_icon} alt="uparrow" onClick={() =>console.log(setFancy(!isFancyOpen))} />
                         <img className="items-center w-24 h-24 rounded cursor-pointer hover:opacity-30 hover:m-0 transition-all duration-300" src={CurrentSongData.image} alt="Album Cover" onClick={() =>setFancy(!isFancyOpen)}/>
                     </div>
 
