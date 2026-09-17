@@ -5,6 +5,9 @@ const VolumeControls = ({setVolume }) => {
     const [sliderValue, setSliderValue] = React.useState(50);
     let [hovering, setHovering] = React.useState(false)
 
+    const [storedvolume, setStoredvolume] = React.useState(50)
+    const [muted, setMuted] = React.useState(false)
+
     const handleChange = (event) => {
         setSliderValue(event.target.value);
         setVolume(Number(event.target.value))
@@ -14,11 +17,25 @@ const VolumeControls = ({setVolume }) => {
     //   ;
     // },[sliderValue,audioRef])
     
+function muteUnmute(){
+    if(muted){
+        console.log("its muted so unmuting!")
+        setMuted(false)
+        setSliderValue(storedvolume)
+        setVolume(storedvolume)
+    }else{
+        console.log("its NOT muted so muting!")
+        setMuted(true)
+        setStoredvolume(sliderValue)
+        setSliderValue(0)
+        setVolume(0)
+    }
+}
 
     return (
         <div className='flex flex-row align-middle items-center gap-5 w-[10vw]'>
-            <button className=''>
-                <img className='w-8' src={assets.icons.volume_icon}/>
+            <button className='hover:cursor-pointer' onClick={()=>muteUnmute()}>
+                <img className='w-8' src={!muted ? assets.icons.volume_icon : assets.icons.mute_icon}/>
             </button>
             <input
                 type="range"

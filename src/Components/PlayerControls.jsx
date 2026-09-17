@@ -1,42 +1,75 @@
 import React from 'react'
-import {songsData, assets } from '../assets/assets'
+import { songsData, assets } from '../assets/assets'
 import PlayerProgressBar from './PlayerProgressBar'
 
 
-const PlayerControls = ({ CurrentSongData, setCurrentSongData, currentSongIndex, setCurrentSongIndex,audioRef,isPlaying, setIsPlaying }) => {
+const PlayerControls = ({ CurrentSongData, setCurrentSongData, currentSongIndex, setCurrentSongIndex, audioRef, isPlaying, setIsPlaying }) => {
     let [progress, setProgress] = React.useState(0);
     let [inShuffle, setInShuffle] = React.useState(false)
     let [isLooping, setIsLooping] = React.useState(false)
-    // let audio = new Audio(music.penumbra);
 
     React.useEffect(() => {
-        if(isLooping && progress < 0.5){
+        if (isLooping && progress < 0.5) {
             audioRef.current.currentTime = progress
         }
     }, [audioRef, isLooping, progress]);
 
 
+    const changeSong = React.useCallback((nextIndex) => {
 
-    function changeSong(nextIndex) {
         let newIndex = nextIndex;
-        if (!songsData[newIndex]) {
-            if (songsData[newIndex] < 0) {
-                audioRef.current.currentTime = progress
-                setProgress(0)
-                return
-            } else {
-                setIsPlaying(false)
-                setProgress(0)
-                audioRef.current.currentTime = progress
-                return
-            }
+
+        if (newIndex < 0) {
+            return;
         }
+
+        if (!songsData[newIndex]) {
+            setIsPlaying(false);
+            setProgress(0);
+            return;
+        }
+
         setCurrentSongIndex(newIndex);
         setCurrentSongData(songsData[newIndex]);
-        setIsPlaying(true)
-        setProgress(0)
+        setIsPlaying(true);
+        setProgress(0);
 
-    }
+    }, [setCurrentSongIndex, setCurrentSongData, setIsPlaying]);
+
+    React.useEffect(() => {
+        audioRef.current.pause()
+        audioRef.current.src = CurrentSongData.file
+        audioRef.current.currentTime = 0
+        audioRef.current.load()
+        audioRef.current.play()
+    }, [CurrentSongData, audioRef])
+
+    React.useEffect(() => {
+        if (isPlaying) {
+            audioRef.current.play()
+        } else {
+            audioRef.current.pause()
+        }
+    }, [isPlaying, audioRef])
+
+    React.useEffect(() => {
+        const audio = audioRef.current
+        if (!audio) return
+
+        const handleTimeUpdate = () => {
+            if (!isLooping && audio.duration - audio.currentTime <= 0.1) {
+                changeSong(currentSongIndex + 1)
+            }
+        }
+
+        audio.addEventListener('timeupdate', handleTimeUpdate)
+
+        return () => {
+            audio.removeEventListener('timeupdate', handleTimeUpdate)
+        }
+
+    }, [audioRef, changeSong, currentSongIndex, isLooping])
+
     return (
         <div className="flex flex-col items-center gap-2 w-full">
             {/* Player Controls */}
@@ -51,10 +84,6 @@ const PlayerControls = ({ CurrentSongData, setCurrentSongData, currentSongIndex,
                         audioRef.current.currentTime = 0
                     } else {
                         changeSong(currentSongIndex - 1);
-                        audioRef.current.currentTime = 0
-                        // audioRef.current.pause();
-                        // audioRef.current.removeAttribute("src");
-                        // audioRef.current.load();
                     }
                 }}>
                     <img className='w-4 cursor-pointer opacity-50 hover:opacity-100 hover:w-4.25 transition-all duration-200'
@@ -76,11 +105,8 @@ const PlayerControls = ({ CurrentSongData, setCurrentSongData, currentSongIndex,
                 </button>
 
                 <button id="next" onClick={() => {
-                    // audioRef.current.pause();
-                    audioRef.current.currentTime = 0
-                    // audioRef.current.removeAttribute("src");
-                    // audioRef.current.load();
                     changeSong(currentSongIndex + 1)
+                    audioRef.current.currentTime = 0
                 }}>
                     <img className='w-4 cursor-pointer opacity-50 hover:opacity-100 hover:w-4.25 transition-all duration-200' src={assets.icons.next_icon} />
                 </button>
@@ -99,7 +125,9 @@ const PlayerControls = ({ CurrentSongData, setCurrentSongData, currentSongIndex,
                 setCurrentSongData={setCurrentSongData}
                 currentSongIndex={currentSongIndex}
                 setCurrentSongIndex={setCurrentSongIndex}
-                audioRef={audioRef} />
+                audioRef={audioRef}
+                changeSong={changeSong}
+            />
         </div>
     )
 }

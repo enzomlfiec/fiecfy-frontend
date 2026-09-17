@@ -1,10 +1,10 @@
 import React from 'react'
 import format from 'format-duration'
 import ProgressTipPopUp from './ProgressTipPopUp'
-import { songsData } from '../assets/assets'
+// import { songsData } from '../assets/assets'
 
 
-const PlayerProgressBar = ({ isPlaying, isLooping, progress, setProgress, CurrentSongData, setCurrentSongData, currentSongIndex, setCurrentSongIndex, audioRef }) => {
+const PlayerProgressBar = ({ isPlaying, isLooping, progress, setProgress, CurrentSongData, currentSongIndex, audioRef}) => {
     let [hovering, setHovering] = React.useState(false)
     let [hoveredPosition, setHoveringPosition] = React.useState(0)
     let mockedProgress = true
@@ -15,27 +15,16 @@ const PlayerProgressBar = ({ isPlaying, isLooping, progress, setProgress, Curren
         return Number(minutes) * 60 + Number(seconds);
     }
 
-    function changeSong(nextIndex) {
-        let newIndex = nextIndex;
-        if (!songsData[newIndex]) {
-            setProgress(0)
-            return
-        }
-        setCurrentSongIndex(newIndex);
-        setCurrentSongData(songsData[newIndex]);
-        setProgress(0)
-    }
-
     let fullProgress = timeToSeconds(fullProgressString)
-    console.log(fullProgressString)
+    // console.log(fullProgressString)
 
     React.useEffect(() => {
         if (!isPlaying) { return }
         if (!mockedProgress) { return }
         const interval = setInterval(() => {
-            if (progress >= fullProgress) {
-                changeSong(currentSongIndex + 1)
-            }
+            // if (progress >= fullProgress && !isLooping) {
+            //     changeSong(currentSongIndex + 1)
+            // }
             setProgress(prevProgress => {
                 if (prevProgress >= fullProgress) {
                     if (isLooping) {
@@ -44,14 +33,13 @@ const PlayerProgressBar = ({ isPlaying, isLooping, progress, setProgress, Curren
                     return fullProgress;
                 }
                 if (prevProgress < fullProgress) {
-                    console.log("Progress: ", prevProgress + 0.3);
+                    // console.log("Progress: ", prevProgress + 0.3);
                     return prevProgress + 0.3;
                 }
             });
         }, 300);
 
         return () => clearInterval(interval);
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isPlaying, isLooping, setProgress, mockedProgress, CurrentSongData, fullProgress, currentSongIndex]);
 
 

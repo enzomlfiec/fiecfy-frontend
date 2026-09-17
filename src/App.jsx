@@ -2,39 +2,50 @@ import React from 'react'
 import Sidebar from './Components/Sidebar'
 import PlayerBar from './Components/PlayerBar'
 import FancyVisualizer from './Components/FancyVisualizer'
-import { songsData } from './assets/assets'
+import { songsData, albumsData } from './assets/assets'
+// import localStorageData from './scripts/functions'
 
-if (React) {
-  console.log("React is loaded")
-}
+// if (React) {
+//   console.log("React is loaded")
+// }
 
 const App = () => {
   let audioRef = React.useRef(null);
-  let [currentSongIndex, setCurrentSongIndex] = React.useState(68);
+  let [currentSongIndex, setCurrentSongIndex] = React.useState(67);
   let [isPlaying, setIsPlaying] = React.useState(false);
   const [isFancyOpen, setFancy] = React.useState(false)
 
   React.useEffect(() => {
-    if(!isPlaying){
+    if (!isPlaying) {
       audioRef.current.pause()
-    }else{
+    } else {
       audioRef.current.play()
     }
-  }, [isPlaying,audioRef])
-  
+  }, [isPlaying, audioRef])
+
+  function checkForLocalStorage() {
+    if (localStorage) {
+      return (
+        {
+          id: songsData[currentSongIndex].id,
+          name: songsData[currentSongIndex].name,
+          artist: songsData[currentSongIndex].artist,
+          image: albumsData[songsData[currentSongIndex].album_id].image,
+          file: songsData[currentSongIndex].file,
+          desc: songsData[currentSongIndex].desc,
+          album_id: songsData[currentSongIndex].album_id,
+          duration: songsData[currentSongIndex].duration,
+          bgColor: albumsData[songsData[currentSongIndex].album_id].bgColor,
+        }
+      )
+    } else {
+      return
+    }
+  }
 
   let [CurrentSongData, setCurrentSongData] = React.useState(
-    {
-      id: songsData[currentSongIndex].id,
-      name: songsData[currentSongIndex].name,
-      artist: songsData[currentSongIndex].artist,
-      image: songsData[currentSongIndex].image,
-      file: songsData[currentSongIndex].file,
-      desc: songsData[currentSongIndex].desc,
-      duration: songsData[currentSongIndex].duration,
-      bgColor: songsData[currentSongIndex].bgColor,
-    }
-  );
+    checkForLocalStorage())
+
 
   return (
     <div

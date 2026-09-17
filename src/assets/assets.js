@@ -20,6 +20,7 @@ import arrow_icon from './icons/arrow.png'
 import mini_player_icon from './icons/mini-player.png'
 import queue_icon from './icons/queue.png'
 import volume_icon from './icons/volume.png'
+import mute_icon from './icons/mute.png'
 import arrow_right from './icons/right_arrow.png'
 import arrow_left from './icons/left_arrow.png'
 import spotify_logo from './icons/spotify_logo.png'
@@ -45,11 +46,81 @@ import img7 from './images/albums/img7.jpg'
 
 import vinyl from './images/vinyl.png'
 
-import song1 from './music/song1.mp3'
-import song2 from './music/song2.mp3'
-import song3 from './music/song3.mp3'
+import actRight from './music/albums/CHASER/ACT RIGHT.mp3'
+import girlHell1999 from './music/albums/CHASER/GIRL HELL 1999.mp3'
+import katamari from './music/albums/CHASER/KATAMARI.mp3'
+import murderEvery1UKnow from './music/albums/CHASER/MURDER EVERY 1 U KNOW! (feat. takihasdied).mp3'
+import p3t from './music/albums/CHASER/P3T.mp3'
+import pushUrT3mprr from './music/albums/CHASER/PUSH UR T3MPRR.mp3'
 
-import penumbra from './music/albums/5/penumbra.mp3'
+import destination from './music/albums/JUDGMENT/Destination .mp3'
+import drumfire from './music/albums/JUDGMENT/Drumfire .mp3'
+import hyenasWheezing from './music/albums/JUDGMENT/Hyenas Wheezing .mp3'
+import lambda from './music/albums/JUDGMENT/Lambda.mp3'
+import myOwnStyle from './music/albums/JUDGMENT/My Own Style .mp3'
+import penumbra from './music/albums/JUDGMENT/Penumbra .mp3'
+import rakeYourInside from './music/albums/JUDGMENT/Rake Your Inside .mp3'
+import randomFire from './music/albums/JUDGMENT/Random Fire .mp3'
+
+import chiharunokoi from './music/albums/MIDORI/Chiharunokoi.mp3'
+import himitsunofutari from './music/albums/MIDORI/Himitsunofutari.mp3'
+import howlingjigoku from './music/albums/MIDORI/Howlingjigoku.mp3'
+import gobyoushi from './music/albums/MIDORI/Howlingjigoku.mp3'
+import kanashiihibi from './music/albums/MIDORI/Kanashiihibi.mp3'
+import konjounashiatashi from './music/albums/MIDORI/Konjounashiatashi, ahobokekasu.mp3'
+import muyokunomuryoku from './music/albums/MIDORI/Muyokunomuryoku.mp3'
+import osaru from './music/albums/MIDORI/Osaru.mp3'
+import suki from './music/albums/MIDORI/Suki.mp3'
+import yukikosan from './music/albums/MIDORI/Yukikosan.mp3'
+
+import beauty from './music/albums/SINISTER_MINDS/Beauty.mp3'
+import bigMisser from './music/albums/SINISTER_MINDS/Big Misser.mp3'
+import dontComeBack from './music/albums/SINISTER_MINDS/Don_t Come Back..mp3'
+import feelThatDread from './music/albums/SINISTER_MINDS/Feel That Dread？.mp3'
+import iDidThat from './music/albums/SINISTER_MINDS/I Did That.mp3'
+import iMissTheQuiet from './music/albums/SINISTER_MINDS/I Miss The Quiet.mp3'
+import redHanded from './music/albums/SINISTER_MINDS/Lord X ft. Redglove, Deutsch - Red-Handed (Lyric Video) ｜ Sinister Minds.mp3'
+import meatshow from './music/albums/SINISTER_MINDS/Meatshow.mp3'
+import minds from './music/albums/SINISTER_MINDS/Minds.mp3'
+import oneLastAsk from './music/albums/SINISTER_MINDS/One Last Ask.mp3'
+import runaway from './music/albums/SINISTER_MINDS/RUNAWAY.mp3'
+import scars from './music/albums/SINISTER_MINDS/Scars.mp3'
+import sinister from './music/albums/SINISTER_MINDS/Sinister.mp3'
+import theFireRises from './music/albums/SINISTER_MINDS/The Fire Rises.mp3'
+import welcomeHome from './music/albums/SINISTER_MINDS/Welcome Home.mp3'
+import youMustAnswer from './music/albums/SINISTER_MINDS/You Must Answer.mp3'
+
+import rudeBuster from './music/albums/DELTARUNE/Rude Buster.mp3'
+import fieldOfHopesAndDreams from './music/albums/DELTARUNE/Field of Hopes and Dreams.mp3'
+import chaosKing from './music/albums/DELTARUNE/Chaos King.mp3'
+import theWorldRevolving from './music/albums/DELTARUNE/THE WORLD REVOLVING.mp3'
+import bigShot from './music/albums/DELTARUNE/BIG SHOT.mp3'
+import ruderBuster from './music/albums/DELTARUNE/Ruder Buster.mp3'
+import tvWorld from './music/albums/DELTARUNE/TV WORLD.mp3'
+import blackKnife from './music/albums/DELTARUNE/Black Knife.mp3'
+import hammerOfJustice from './music/albums/DELTARUNE/Hammer of Justice.mp3'
+import guardian from './music/albums/DELTARUNE/GUARDIAN.mp3'
+import gardenOfHopesAndDreams from './music/albums/DELTARUNE/Garden of Hopes and Dreams.mp3'
+import rakuichiBuster from './music/albums/DELTARUNE/Rakuichi Buster.mp3'
+import sunsetOfSevenSuns from './music/albums/DELTARUNE/Sunset of Seven Suns.mp3'
+import flowerMan from './music/albums/DELTARUNE/Flower Man.mp3'
+
+import crashAddiction from './music/albums/YAKUZA_0/Crash Addiction.mp3'
+import customerCreed from './music/albums/YAKUZA_0/Customer Creed.mp3'
+import fiercestWarriorVer0 from './music/albums/YAKUZA_0/Fiercest Warrior ver.0.mp3'
+import forceAddiction from './music/albums/YAKUZA_0/Force Addiction.mp3'
+import oathOfEnma from './music/albums/YAKUZA_0/Oath of Enma.mp3'
+import oneEyedAssassin from './music/albums/YAKUZA_0/One-Eyed Assassin.mp3'
+import oneEyedDancer from './music/albums/YAKUZA_0/One-Eyed Dancer.mp3'
+import oneEyedSlugger from './music/albums/YAKUZA_0/One-Eyed Slugger.mp3'
+import parryAddiction from './music/albums/YAKUZA_0/Parry Addiction.mp3'
+import pledgeOfDemon from './music/albums/YAKUZA_0/Pledge of Demon.mp3'
+import receiveYouTheSubtype from './music/albums/YAKUZA_0/Receive You The Subtype.mp3'
+import receiveYouTechTranceArrange from './music/albums/YAKUZA_0/Receive You ～Tech Trance Arrange～.mp3'
+import tusk from './music/albums/YAKUZA_0/t u s k.mp3'
+import troubleShootingStar from './music/albums/YAKUZA_0/Trouble Shooting Star.mp3'
+import twoDragons from './music/albums/YAKUZA_0/Two Dragons.mp3'
+import withVengeance from './music/albums/YAKUZA_0/With Vengeance.mp3'
 
 const icons = {
   bell_icon,
@@ -73,6 +144,7 @@ const icons = {
   arrow_icon,
   mini_player_icon,
   volume_icon,
+  mute_icon,
   queue_icon,
   arrow_left,
   arrow_right,
@@ -95,10 +167,81 @@ const albumCovers = {
 export { albumCovers }
 
 const music = {
-  song1,
-  song2,
-  song3,
+  actRight,
+  girlHell1999,
+  katamari,
+  murderEvery1UKnow,
+  p3t,
+  pushUrT3mprr,
+
+  destination,
+  drumfire,
+  hyenasWheezing,
+  lambda,
+  myOwnStyle,
   penumbra,
+  rakeYourInside,
+  randomFire,
+
+  chiharunokoi,
+  himitsunofutari,
+  gobyoushi,
+  howlingjigoku,
+  kanashiihibi,
+  konjounashiatashi,
+  muyokunomuryoku,
+  osaru,
+  suki,
+  yukikosan,
+
+  beauty,
+  bigMisser,
+  dontComeBack,
+  feelThatDread,
+  iDidThat,
+  iMissTheQuiet,
+  redHanded,
+  meatshow,
+  minds,
+  oneLastAsk,
+  runaway,
+  scars,
+  sinister,
+  theFireRises,
+  welcomeHome,
+  youMustAnswer,
+
+  rudeBuster,
+  fieldOfHopesAndDreams,
+  chaosKing,
+  theWorldRevolving,
+  bigShot,
+  ruderBuster,
+  tvWorld,
+  blackKnife,
+  hammerOfJustice,
+  guardian,
+  gardenOfHopesAndDreams,
+  rakuichiBuster,
+  sunsetOfSevenSuns,
+  flowerMan,
+
+  crashAddiction,
+  customerCreed,
+  fiercestWarriorVer0,
+  forceAddiction,
+  oathOfEnma,
+  oneEyedAssassin,
+  oneEyedDancer,
+  oneEyedSlugger,
+  parryAddiction,
+  pledgeOfDemon,
+  receiveYouTheSubtype,
+  receiveYouTechTranceArrange,
+  tusk,
+  troubleShootingStar,
+  twoDragons,
+  withVengeance
 }
 
 export { music }
@@ -133,7 +276,7 @@ export const albumsData = [
     artist: 'Churgney Gurgney',
     image: albumCovers.img3,
     desc: 'Sinister Minds by Churgney Gurgney',
-    bgColor: '#191919',
+    bgColor: '#000000',
   },
 
   {
@@ -142,7 +285,7 @@ export const albumsData = [
     artist: 'Toby Fox',
     image: albumCovers.img4,
     desc: 'My favorite Deltarune tracks',
-    bgColor: '#FF0000',
+    bgColor: '#400000',
   },
 
   {
@@ -164,6 +307,8 @@ export const albumsData = [
   },
 ]
 
+
+
 export const songsData = [
   // =========================
   // FEMTANYL — CHASER
@@ -174,6 +319,7 @@ export const songsData = [
     name: 'ACT RIGHT',
     artist: 'femtanyl',
     image: albumCovers.img1,
+    album_id: 0,
     file: music.actRight,
     desc: 'CHASER',
     duration: '2:24',
@@ -184,6 +330,7 @@ export const songsData = [
     name: 'P3T',
     artist: 'femtanyl',
     image: albumCovers.img1,
+    album_id: 0,
     file: music.p3t,
     desc: 'CHASER',
     duration: '1:42',
@@ -194,6 +341,7 @@ export const songsData = [
     name: 'PUSH UR T3MPRR',
     artist: 'femtanyl',
     image: albumCovers.img1,
+    album_id: 0,
     file: music.pushUrT3mprr,
     desc: 'CHASER',
     duration: '2:28',
@@ -204,6 +352,7 @@ export const songsData = [
     name: 'KATAMARI',
     artist: 'femtanyl',
     image: albumCovers.img1,
+    album_id: 0,
     file: music.katamari,
     desc: 'CHASER',
     duration: '2:38',
@@ -214,6 +363,7 @@ export const songsData = [
     name: 'MURDER EVERY 1 U KNOW!',
     artist: 'femtanyl, takihasdied',
     image: albumCovers.img1,
+    album_id: 0,
     file: music.murderEvery1UKnow,
     desc: 'CHASER',
     duration: '2:05',
@@ -224,6 +374,7 @@ export const songsData = [
     name: 'GIRL HELL 1999',
     artist: 'femtanyl',
     image: albumCovers.img1,
+    album_id: 0,
     file: music.girlHell1999,
     desc: 'CHASER',
     duration: '2:25',
@@ -239,6 +390,7 @@ export const songsData = [
     name: 'Suki',
     artist: 'ミドリ',
     image: albumCovers.img2,
+    album_id: 1,
     file: music.suki,
     desc: 'Aratamemashite, Hajimemashite, Midori desu',
     duration: '0:44',
@@ -249,6 +401,7 @@ export const songsData = [
     name: 'Yukikosan',
     artist: 'ミドリ',
     image: albumCovers.img2,
+    album_id: 1,
     file: music.yukikosan,
     desc: 'Aratamemashite, Hajimemashite, Midori desu',
     duration: '3:09',
@@ -259,6 +412,7 @@ export const songsData = [
     name: 'Kanashiihibi',
     artist: 'ミドリ',
     image: albumCovers.img2,
+    album_id: 1,
     file: music.kanashiihibi,
     desc: 'Aratamemashite, Hajimemashite, Midori desu',
     duration: '2:38',
@@ -269,6 +423,7 @@ export const songsData = [
     name: 'お猿',
     artist: 'ミドリ',
     image: albumCovers.img2,
+    album_id: 1,
     file: music.osaru,
     desc: 'Aratamemashite, Hajimemashite, Midori desu',
     duration: '2:09',
@@ -279,6 +434,7 @@ export const songsData = [
     name: 'Konjounashiatashi, ahobokekasu',
     artist: 'ミドリ',
     image: albumCovers.img2,
+    album_id: 1,
     file: music.konjounashiatashi,
     desc: 'Aratamemashite, Hajimemashite, Midori desu',
     duration: '1:39',
@@ -289,6 +445,7 @@ export const songsData = [
     name: 'Chiharunokoi',
     artist: 'ミドリ',
     image: albumCovers.img2,
+    album_id: 1,
     file: music.chiharunokoi,
     desc: 'Aratamemashite, Hajimemashite, Midori desu',
     duration: '3:29',
@@ -299,6 +456,7 @@ export const songsData = [
     name: 'Himitsunofutari',
     artist: 'ミドリ',
     image: albumCovers.img2,
+    album_id: 1,
     file: music.himitsunofutari,
     desc: 'Aratamemashite, Hajimemashite, Midori desu',
     duration: '3:27',
@@ -309,6 +467,7 @@ export const songsData = [
     name: 'Gobyoushi',
     artist: 'ミドリ',
     image: albumCovers.img2,
+    album_id: 1,
     file: music.gobyoushi,
     desc: 'Aratamemashite, Hajimemashite, Midori desu',
     duration: '4:38',
@@ -319,6 +478,7 @@ export const songsData = [
     name: 'Howlingjigoku',
     artist: 'ミドリ',
     image: albumCovers.img2,
+    album_id: 1,
     file: music.howlingjigoku,
     desc: 'Aratamemashite, Hajimemashite, Midori desu',
     duration: '3:33',
@@ -329,6 +489,7 @@ export const songsData = [
     name: 'Muyokunomuryoku',
     artist: 'ミドリ',
     image: albumCovers.img2,
+    album_id: 1,
     file: music.muyokunomuryoku,
     desc: 'Aratamemashite, Hajimemashite, Midori desu',
     duration: '5:43',
@@ -345,6 +506,7 @@ export const songsData = [
     name: 'Welcome Home',
     artist: 'Churgney Gurgney, Marley Jauz',
     image: albumCovers.img3,
+    album_id: 2,
     file: music.welcomeHome,
     desc: 'Sinister Minds',
     duration: '0:37',
@@ -355,6 +517,7 @@ export const songsData = [
     name: 'I Miss The Quiet',
     artist: 'Churgney Gurgney, Marley Jauz',
     image: albumCovers.img3,
+    album_id: 2,
     file: music.iMissTheQuiet,
     desc: 'Sinister Minds',
     duration: '4:03',
@@ -365,6 +528,7 @@ export const songsData = [
     name: 'You Must Answer',
     artist: 'Churgney Gurgney, Marley Jauz',
     image: albumCovers.img3,
+    album_id: 2,
     file: music.youMustAnswer,
     desc: 'Sinister Minds',
     duration: '5:40',
@@ -375,6 +539,7 @@ export const songsData = [
     name: 'Minds',
     artist: 'Churgney Gurgney, Marley Jauz, RedTv53, MarStarBro',
     image: albumCovers.img3,
+    album_id: 2,
     file: music.minds,
     desc: 'Sinister Minds',
     duration: '5:24',
@@ -385,6 +550,7 @@ export const songsData = [
     name: 'Big Misser',
     artist: 'Churgney Gurgney, Marley Jauz',
     image: albumCovers.img3,
+    album_id: 2,
     file: music.bigMisser,
     desc: 'Sinister Minds',
     duration: '3:21',
@@ -395,6 +561,7 @@ export const songsData = [
     name: 'I Did That',
     artist: 'Churgney Gurgney, Marley Jauz, Wrathstetic',
     image: albumCovers.img3,
+    album_id: 2,
     file: music.iDidThat,
     desc: 'Sinister Minds',
     duration: '3:59',
@@ -405,6 +572,7 @@ export const songsData = [
     name: 'Meatshow',
     artist: 'Churgney Gurgney, Marley Jauz',
     image: albumCovers.img3,
+    album_id: 2,
     file: music.meatshow,
     desc: 'Sinister Minds',
     duration: '4:29',
@@ -415,6 +583,7 @@ export const songsData = [
     name: 'Beauty',
     artist: 'Churgney Gurgney, Harrison Bennett, MaimyMayo',
     image: albumCovers.img3,
+    album_id: 2,
     file: music.beauty,
     desc: 'Sinister Minds',
     duration: '4:52',
@@ -425,6 +594,7 @@ export const songsData = [
     name: 'Scars',
     artist: 'Churgney Gurgney, Marley Jauz',
     image: albumCovers.img3,
+    album_id: 2,
     file: music.scars,
     desc: 'Sinister Minds',
     duration: '1:40',
@@ -435,6 +605,7 @@ export const songsData = [
     name: 'The Fire Rises',
     artist: 'Churgney Gurgney, Marley Jauz',
     image: albumCovers.img3,
+    album_id: 2,
     file: music.theFireRises,
     desc: 'Sinister Minds',
     duration: '5:42',
@@ -445,6 +616,7 @@ export const songsData = [
     name: 'Sinister',
     artist: 'Churgney Gurgney, Marley Jauz, RedTv53, Wrathstetic',
     image: albumCovers.img3,
+    album_id: 2,
     file: music.sinister,
     desc: 'Sinister Minds',
     duration: '3:28',
@@ -455,6 +627,7 @@ export const songsData = [
     name: 'Feel That Dread?',
     artist: 'Churgney Gurgney, Marley Jauz, Wrathstetic',
     image: albumCovers.img3,
+    album_id: 2,
     file: music.feelThatDread,
     desc: 'Sinister Minds',
     duration: '5:42',
@@ -465,6 +638,7 @@ export const songsData = [
     name: 'RUNAWAY',
     artist: 'Churgney Gurgney, MaimyMayo',
     image: albumCovers.img3,
+    album_id: 2,
     file: music.runaway,
     desc: 'Sinister Minds',
     duration: '4:04',
@@ -475,6 +649,7 @@ export const songsData = [
     name: 'Red-Handed',
     artist: 'Churgney Gurgney, Marley Jauz, MaimyMayo',
     image: albumCovers.img3,
+    album_id: 2,
     file: music.redHanded,
     desc: 'Sinister Minds',
     duration: '4:49',
@@ -485,6 +660,7 @@ export const songsData = [
     name: 'One Last Ask',
     artist: 'Churgney Gurgney, Marley Jauz',
     image: albumCovers.img3,
+    album_id: 2,
     file: music.oneLastAsk,
     desc: 'Sinister Minds',
     duration: '1:28',
@@ -495,6 +671,7 @@ export const songsData = [
     name: "Don't Come Back.",
     artist: 'Churgney Gurgney, Marley Jauz, MaimyMayo',
     image: albumCovers.img3,
+    album_id: 2,
     file: music.dontComeBack,
     desc: 'Sinister Minds',
     duration: '5:54',
@@ -510,6 +687,7 @@ export const songsData = [
     name: 'Rude Buster',
     artist: 'Toby Fox',
     image: albumCovers.img4,
+    album_id: 3,
     file: music.rudeBuster,
     desc: 'Best of Deltarune OST',
     duration: '1:15',
@@ -520,6 +698,7 @@ export const songsData = [
     name: 'Field of Hopes and Dreams',
     artist: 'Toby Fox',
     image: albumCovers.img4,
+    album_id: 3,
     file: music.fieldOfHopesAndDreams,
     desc: 'Best of Deltarune OST',
     duration: '2:41',
@@ -530,6 +709,7 @@ export const songsData = [
     name: 'Chaos King',
     artist: 'Toby Fox',
     image: albumCovers.img4,
+    album_id: 3,
     file: music.chaosKing,
     desc: 'Best of Deltarune OST',
     duration: '1:46',
@@ -540,6 +720,7 @@ export const songsData = [
     name: 'THE WORLD REVOLVING',
     artist: 'Toby Fox',
     image: albumCovers.img4,
+    album_id: 3,
     file: music.theWorldRevolving,
     desc: 'Best of Deltarune OST',
     duration: '1:41',
@@ -550,6 +731,7 @@ export const songsData = [
     name: 'BIG SHOT',
     artist: 'Toby Fox',
     image: albumCovers.img4,
+    album_id: 3,
     file: music.bigShot,
     desc: 'Best of Deltarune OST',
     duration: '2:22',
@@ -560,6 +742,7 @@ export const songsData = [
     name: 'Ruder Buster',
     artist: 'Toby Fox',
     image: albumCovers.img4,
+    album_id: 3,
     file: music.ruderBuster,
     desc: 'Best of Deltarune OST',
     duration: '1:46',
@@ -570,6 +753,7 @@ export const songsData = [
     name: 'TV WORLD',
     artist: 'Toby Fox',
     image: albumCovers.img4,
+    album_id: 3,
     file: music.tvWorld,
     desc: 'Best of Deltarune OST',
     duration: '2:09',
@@ -580,6 +764,7 @@ export const songsData = [
     name: 'Black Knife',
     artist: 'Toby Fox',
     image: albumCovers.img4,
+    album_id: 3,
     file: music.blackKnife,
     desc: 'Best of Deltarune OST',
     duration: '1:57',
@@ -590,6 +775,7 @@ export const songsData = [
     name: 'Hammer of Justice',
     artist: 'Toby Fox',
     image: albumCovers.img4,
+    album_id: 3,
     file: music.hammerOfJustice,
     desc: 'Best of Deltarune OST',
     duration: '2:13',
@@ -600,6 +786,7 @@ export const songsData = [
     name: 'GUARDIAN',
     artist: 'Toby Fox',
     image: albumCovers.img4,
+    album_id: 3,
     file: music.guardian,
     desc: 'Best of Deltarune OST',
     duration: '3:46',
@@ -610,6 +797,7 @@ export const songsData = [
     name: 'Garden of Hopes and Dreams',
     artist: 'Toby Fox, insaneintherainmusic',
     image: albumCovers.img4,
+    album_id: 3,
     file: music.gardenOfHopesAndDreams,
     desc: 'Best of Deltarune OST',
     duration: '3:23',
@@ -620,6 +808,7 @@ export const songsData = [
     name: 'Rakuichi Buster',
     artist: 'Toby Fox, Rakuichi',
     image: albumCovers.img4,
+    album_id: 3,
     file: music.rakuichiBuster,
     desc: 'Best of Deltarune OST',
     duration: '1:49',
@@ -630,6 +819,7 @@ export const songsData = [
     name: 'Sunset of Seven Suns',
     artist: 'Toby Fox',
     image: albumCovers.img4,
+    album_id: 3,
     file: music.sunsetOfSevenSuns,
     desc: 'Best of Deltarune OST',
     duration: '1:36',
@@ -640,6 +830,7 @@ export const songsData = [
     name: 'Flower Man',
     artist: 'Toby Fox, Camellia',
     image: albumCovers.img4,
+    album_id: 3,
     file: music.flowerMan,
     desc: 'Best of Deltarune OST',
     duration: '3:12',
@@ -650,6 +841,7 @@ export const songsData = [
     name: 'Force Addiction',
     artist: 'SEGA SOUND TEAM,庄司 英徳',
     image: albumCovers.img5,
+    album_id: 4,
     file: music.forceAddiction,
     desc: 'Yakuza 0 — Favorites',
     duration: '2:27',
@@ -659,6 +851,7 @@ export const songsData = [
     name: 'Parry Addiction',
     artist: 'SEGA SOUND TEAM,庄司 英徳',
     image: albumCovers.img5,
+    album_id: 4,
     file: music.parryAddiction,
     desc: 'Yakuza 0 — Favorites',
     duration: '3:52',
@@ -668,6 +861,7 @@ export const songsData = [
     name: 'Crash Addiction',
     artist: 'SEGA SOUND TEAM,庄司 英徳',
     image: albumCovers.img5,
+    album_id: 4,
     file: music.crashAddiction,
     desc: 'Yakuza 0 — Favorites',
     duration: '3:05',
@@ -677,7 +871,8 @@ export const songsData = [
     name: 'Receive You ~Tech Trance Arrangement~',
     artist: 'SEGA SOUND TEAM,庄司 英徳',
     image: albumCovers.img5,
-    file: music.receiveYouTechTrance,
+    album_id: 4,
+    file: music.receiveYouTechTranceArrange,
     desc: 'Yakuza 0 — Favorites',
     duration: '3:42',
   },
@@ -686,6 +881,7 @@ export const songsData = [
     name: 'Trouble Shooting Star',
     artist: 'SEGA SOUND TEAM,ZENTA',
     image: albumCovers.img5,
+    album_id: 4,
     file: music.troubleShootingStar,
     desc: 'Yakuza 0 — Favorites',
     duration: '2:31',
@@ -695,6 +891,7 @@ export const songsData = [
     name: 'Customer Creed',
     artist: 'SEGA SOUND TEAM,庄司 英徳',
     image: albumCovers.img5,
+    album_id: 4,
     file: music.customerCreed,
     desc: 'Yakuza 0 — Favorites',
     duration: '2:37',
@@ -704,6 +901,7 @@ export const songsData = [
     name: 'One-Eyed Slugger',
     artist: 'SEGA SOUND TEAM,庄司 英徳',
     image: albumCovers.img5,
+    album_id: 4,
     file: music.oneEyedSlugger,
     desc: 'Yakuza 0 — Favorites',
     duration: '3:42',
@@ -713,6 +911,7 @@ export const songsData = [
     name: 'One-Eyed Dancer',
     artist: 'SEGA SOUND TEAM,庄司 英徳',
     image: albumCovers.img5,
+    album_id: 4,
     file: music.oneEyedDancer,
     desc: 'Yakuza 0 — Favorites',
     duration: '3:38',
@@ -722,6 +921,7 @@ export const songsData = [
     name: 'Receive You The Subtype',
     artist: 'SEGA SOUND TEAM,庄司 英徳',
     image: albumCovers.img5,
+    album_id: 4,
     file: music.receiveYouTheSubtype,
     desc: 'Yakuza 0 — Favorites',
     duration: '3:52',
@@ -731,6 +931,7 @@ export const songsData = [
     name: 't u s k',
     artist: 'SEGA SOUND TEAM,庄司 英徳',
     image: albumCovers.img5,
+    album_id: 4,
     file: music.tusk,
     desc: 'Yakuza 0 — Favorites',
     duration: '4:00',
@@ -740,6 +941,7 @@ export const songsData = [
     name: 'Pledge of Demon',
     artist: 'SEGA SOUND TEAM,庄司 英徳',
     image: albumCovers.img5,
+    album_id: 4,
     file: music.pledgeOfDemon,
     desc: 'Yakuza 0 — Favorites',
     duration: '3:56',
@@ -749,6 +951,7 @@ export const songsData = [
     name: 'Oath of Enma',
     artist: 'SEGA SOUND TEAM,庄司 英徳',
     image: albumCovers.img5,
+    album_id: 4,
     file: music.oathOfEnma,
     desc: 'Yakuza 0 — Favorites',
     duration: '3:34',
@@ -758,6 +961,7 @@ export const songsData = [
     name: 'With Vengeance',
     artist: 'SEGA SOUND TEAM,庄司 英徳',
     image: albumCovers.img5,
+    album_id: 4,
     file: music.withVengeance,
     desc: 'Yakuza 0 — Favorites',
     duration: '3:33',
@@ -767,6 +971,7 @@ export const songsData = [
     name: 'Two Dragons',
     artist: 'SEGA SOUND TEAM,庄司 英徳',
     image: albumCovers.img5,
+    album_id: 4,
     file: music.twoDragons,
     desc: 'Yakuza 0 — Favorites',
     duration: '4:33',
@@ -776,7 +981,8 @@ export const songsData = [
     name: 'Fiercest Warrior ver.0',
     artist: 'SEGA SOUND TEAM,庄司 英徳',
     image: albumCovers.img5,
-    file: music.fiercestWarrior,
+    album_id: 4,
+    file: music.fiercestWarriorVer0,
     desc: 'Yakuza 0 — Favorites',
     duration: '2:49',
   },
@@ -786,6 +992,7 @@ export const songsData = [
     name: 'Random Fire',
     artist: 'Hidenori Shoji',
     image: albumCovers.img6,
+    album_id: 5,
     file: music.randomFire,
     desc: 'Judgment — Favorites',
     duration: '3:18',
@@ -796,6 +1003,7 @@ export const songsData = [
     name: 'Drumfire',
     artist: 'Hidenori Shoji',
     image: albumCovers.img6,
+    album_id: 5,
     file: music.drumfire,
     desc: 'Judgment — Favorites',
     duration: '3:54',
@@ -806,6 +1014,7 @@ export const songsData = [
     name: 'My Own Style',
     artist: 'Saori Yoshida',
     image: albumCovers.img6,
+    album_id: 5,
     file: music.myOwnStyle,
     desc: 'Judgment — Favorites',
     duration: '3:48',
@@ -816,6 +1025,7 @@ export const songsData = [
     name: 'Λ (lambda)',
     artist: '83key',
     image: albumCovers.img6,
+    album_id: 5,
     file: music.lambda,
     desc: 'Judgment — Favorites',
     duration: '2:52',
@@ -826,6 +1036,7 @@ export const songsData = [
     name: 'Hyenas Wheezing',
     artist: 'Hyd Lunch',
     image: albumCovers.img6,
+    album_id: 5,
     file: music.hyenasWheezing,
     desc: 'Judgment — Favorites',
     duration: '2:08',
@@ -836,6 +1047,7 @@ export const songsData = [
     name: 'Rake Your Inside',
     artist: '83key',
     image: albumCovers.img6,
+    album_id: 5,
     file: music.rakeYourInside,
     desc: 'Judgment — Favorites',
     duration: '3:26',
@@ -846,6 +1058,7 @@ export const songsData = [
     name: 'Destination',
     artist: 'Yuri Fukuda',
     image: albumCovers.img6,
+    album_id: 5,
     file: music.destination,
     desc: 'Judgment — Favorites',
     duration: '3:32',
@@ -856,6 +1069,7 @@ export const songsData = [
     name: 'Penumbra',
     artist: 'Hidenori Shoji',
     image: albumCovers.img6,
+    album_id: 5,
     file: music.penumbra,
     desc: 'Judgment — Favorites',
     duration: '5:22',

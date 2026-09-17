@@ -113,3 +113,20 @@ html {
   opacity: 1;
 }
 
+.overlay {
+    /* position: relative; */
+}
+
+.overlay::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, #000000, var(--album-color));
+    opacity: 0;
+    transition: opacity 500ms ease;
+    pointer-events: none;
+}
+
+.overlay.vinyl-out::before {
+    opacity: 1;
+}
