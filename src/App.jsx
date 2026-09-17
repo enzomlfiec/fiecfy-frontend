@@ -11,7 +11,7 @@ import { songsData, albumsData } from './assets/assets'
 
 const App = () => {
   let audioRef = React.useRef(null);
-  let [currentSongIndex, setCurrentSongIndex] = React.useState(67);
+  let [currentSongIndex, setCurrentSongIndex] = React.useState(1);
   let [isPlaying, setIsPlaying] = React.useState(false);
   const [isFancyOpen, setFancy] = React.useState(false)
 

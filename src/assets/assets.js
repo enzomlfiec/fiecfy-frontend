@@ -258,7 +258,7 @@ export const albumsData = [
     artist: 'femtanyl',
     image: albumCovers.img1,
     desc: 'CHASER by femtanyl',
-    bgColor: '#191919',
+    bgColor: '#FF0328',
   },
 
   {
