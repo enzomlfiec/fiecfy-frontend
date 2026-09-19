@@ -1,48 +1,27 @@
 import React from 'react'
-import { songsData, assets } from '../assets/assets'
+import { assets } from '../assets/assets'
 import PlayerProgressBar from './PlayerProgressBar'
 
 
-const PlayerControls = ({ CurrentSongData, setCurrentSongData, currentSongIndex, setCurrentSongIndex, audioRef, isPlaying, setIsPlaying }) => {
-    let [progress, setProgress] = React.useState(0);
+const PlayerControls = ({ changeSong, progress, setProgress, currentSongData, setCurrentSongData, currentSongIndex, setCurrentSongIndex, audioRef, isPlaying, setIsPlaying }) => {
+
     let [inShuffle, setInShuffle] = React.useState(false)
     let [isLooping, setIsLooping] = React.useState(false)
 
     React.useEffect(() => {
-        if (isLooping && progress < 0.5) {
+        if (isLooping && progress <= 0.1) {
             audioRef.current.currentTime = progress
         }
     }, [audioRef, isLooping, progress]);
 
-
-    const changeSong = React.useCallback((nextIndex) => {
-
-        let newIndex = nextIndex;
-
-        if (newIndex < 0) {
-            return;
-        }
-
-        if (!songsData[newIndex]) {
-            setIsPlaying(false);
-            setProgress(0);
-            return;
-        }
-
-        setCurrentSongIndex(newIndex);
-        setCurrentSongData(songsData[newIndex]);
-        setIsPlaying(true);
-        setProgress(0);
-
-    }, [setCurrentSongIndex, setCurrentSongData, setIsPlaying]);
-
     React.useEffect(() => {
-        audioRef.current.pause()
-        audioRef.current.src = CurrentSongData.file
-        audioRef.current.currentTime = 0
+        audioRef.current.src = currentSongData.file
         audioRef.current.load()
+        audioRef.current.currentTime = progress
         audioRef.current.play()
-    }, [CurrentSongData, audioRef])
+        // audioRef.current.pause()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [currentSongData, audioRef])
 
     React.useEffect(() => {
         if (isPlaying) {
@@ -57,7 +36,7 @@ const PlayerControls = ({ CurrentSongData, setCurrentSongData, currentSongIndex,
         if (!audio) return
 
         const handleTimeUpdate = () => {
-            if (!isLooping && audio.duration - audio.currentTime <= 0.1) {
+            if (audio.duration - audio.currentTime <= 0) {
                 changeSong(currentSongIndex + 1)
             }
         }
@@ -71,7 +50,7 @@ const PlayerControls = ({ CurrentSongData, setCurrentSongData, currentSongIndex,
     }, [audioRef, changeSong, currentSongIndex, isLooping])
 
     return (
-        <div className="flex flex-col items-center gap-2 w-full">
+        <div className="flex flex-col items-center gap-2 w-full select-none">
             {/* Player Controls */}
             <div className='flex justify-center w-100 gap-5'>
                 <button id="shuffle" onClick={() => setInShuffle(!inShuffle)}>
@@ -80,7 +59,7 @@ const PlayerControls = ({ CurrentSongData, setCurrentSongData, currentSongIndex,
 
                 <button id="prev" onClick={() => {
                     if (progress > 3) {
-                        setProgress(0);
+                        setProgress(0.1);
                         audioRef.current.currentTime = 0
                     } else {
                         changeSong(currentSongIndex - 1);
@@ -121,7 +100,7 @@ const PlayerControls = ({ CurrentSongData, setCurrentSongData, currentSongIndex,
                 isLooping={isLooping}
                 progress={progress}
                 setProgress={setProgress}
-                CurrentSongData={CurrentSongData}
+                currentSongData={currentSongData}
                 setCurrentSongData={setCurrentSongData}
                 currentSongIndex={currentSongIndex}
                 setCurrentSongIndex={setCurrentSongIndex}

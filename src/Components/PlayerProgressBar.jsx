@@ -4,17 +4,16 @@ import ProgressTipPopUp from './ProgressTipPopUp'
 // import { songsData } from '../assets/assets'
 
 
-const PlayerProgressBar = ({ isPlaying, isLooping, progress, setProgress, CurrentSongData, currentSongIndex, audioRef}) => {
+const PlayerProgressBar = ({ isPlaying, isLooping, progress, setProgress, currentSongData, currentSongIndex, audioRef }) => {
     let [hovering, setHovering] = React.useState(false)
     let [hoveredPosition, setHoveringPosition] = React.useState(0)
     let mockedProgress = true
-    let fullProgressString = CurrentSongData?.duration || "1:40";    // let fullProgressString = "6:00"
+    let fullProgressString = currentSongData?.duration || "1:40";    // let fullProgressString = "6:00"
 
     const timeToSeconds = (time) => {
         const [minutes, seconds] = time.split(":");
         return Number(minutes) * 60 + Number(seconds);
     }
-
     let fullProgress = timeToSeconds(fullProgressString)
     // console.log(fullProgressString)
 
@@ -26,7 +25,7 @@ const PlayerProgressBar = ({ isPlaying, isLooping, progress, setProgress, Curren
             //     changeSong(currentSongIndex + 1)
             // }
             setProgress(prevProgress => {
-                if (prevProgress >= fullProgress) {
+                if (prevProgress > fullProgress) {
                     if (isLooping) {
                         return 0;
                     }
@@ -34,14 +33,22 @@ const PlayerProgressBar = ({ isPlaying, isLooping, progress, setProgress, Curren
                 }
                 if (prevProgress < fullProgress) {
                     // console.log("Progress: ", prevProgress + 0.3);
-                    return prevProgress + 0.3;
+                    return prevProgress + 0.1;
                 }
             });
-        }, 300);
-
+        }, 100);
         return () => clearInterval(interval);
-    }, [isPlaying, isLooping, setProgress, mockedProgress, CurrentSongData, fullProgress, currentSongIndex]);
+    }, [isPlaying, isLooping, setProgress, mockedProgress, currentSongData, fullProgress, currentSongIndex]);
 
+    React.useEffect(() => {
+        if (progress > fullProgress) {
+            if (isLooping) {
+                setProgress(0)
+            } else {
+                setProgress(fullProgress - 0.1)
+            }
+        }
+    }, [progress, setProgress, fullProgress, isLooping])
 
     return (
         <>

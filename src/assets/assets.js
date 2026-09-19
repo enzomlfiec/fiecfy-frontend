@@ -283,9 +283,9 @@ export const albumsData = [
     id: 3,
     name: 'Best of Deltarune OST',
     artist: 'Toby Fox',
-    image: albumCovers.img4,
+    image: albumCovers.img2,
     desc: 'My favorite Deltarune tracks',
-    bgColor: '#400000',
+    bgColor: '#AA0000',
   },
 
   {

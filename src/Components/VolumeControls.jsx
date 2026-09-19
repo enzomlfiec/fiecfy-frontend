@@ -34,7 +34,7 @@ function muteUnmute(){
 
     return (
         <div className='flex flex-row align-middle items-center gap-5 w-[10vw]'>
-            <button className='hover:cursor-pointer' onClick={()=>muteUnmute()}>
+            <button className='hover:cursor-pointer select-none' onClick={()=>muteUnmute()}>
                 <img className='w-8' src={!muted ? assets.icons.volume_icon : assets.icons.mute_icon}/>
             </button>
             <input

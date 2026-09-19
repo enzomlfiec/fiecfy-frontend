@@ -113,20 +113,34 @@ html {
   opacity: 1;
 }
 
+@property --album-color {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #000;
+}
+
 .overlay {
-    /* position: relative; */
+  transition: --album-color 600ms ease;
+}
+
+.overlay {
+  transition:
+    opacity 300ms ease,
+    background-color 500ms ease,
+    backdrop-filter 300ms ease,
+    --album-color 1000ms ease;
 }
 
 .overlay::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, #000000, var(--album-color));
-    opacity: 0;
-    transition: opacity 500ms ease;
-    pointer-events: none;
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, #000000, var(--album-color));
+  opacity: 0;
+  transition: opacity 500ms ease;
+  pointer-events: none;
 }
 
 .overlay.vinyl-out::before {
-    opacity: 1;
+  opacity: 1;
 }

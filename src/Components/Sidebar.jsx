@@ -8,7 +8,7 @@ const Sidebar = () => {
   let [hovering, setHovering] = React.useState(false)
   let [hoveringInput, setHoveringInput] = React.useState(false)
   let [collapsed, setCollapsed] = React.useState(false)
-  let [searching, setSearching] = React.useState(true)
+  let [searching, setSearching] = React.useState(false)
   let searchInputRef = React.useRef(null);
 
   function focusOn() {
@@ -49,7 +49,7 @@ const Sidebar = () => {
           {/* Home */}
           <div className="bg-bg_02 hover:bg-bg_03 rounded-2xl cursor-pointer transition-all duration-300 flex flex-col justify-around">
             <div className={`flex items-center gap-3 p-5 pl-7.5 ${collapsed ? '' : ''} `}>
-              <img className="w-6" src={assets.icons.home_icon} alt="Home" />
+              <img className="w-6 mr-2" src={assets.icons.home_icon} alt="Home" />
               <p className={`font-bold ${collapsed ? 'hidden' : 'block'}`}>Home</p>
             </div>
           </div>
@@ -70,7 +70,7 @@ const Sidebar = () => {
                     <button title="Collapse" className={`opacity-0 rotate-0 ${hovering ? 'cursor-pointer opacity-100 block' : 'hidden'} ${collapsed ? 'rotate-180' : ''} transition-all duration-300`}>
                       <img className={`w-6 shrink-0`} src={assets.icons.arrow_left} alt="Library" />
                     </button>
-                    <img className="w-6 mix-blend-lighten" src={collapsed ? assets.icons.library_icon_alt : assets.icons.library_icon} alt="Library" />
+                    <img className="w-6 mix-blend-lighten mr-2" src={collapsed ? assets.icons.library_icon_alt : assets.icons.library_icon} alt="Library" />
                     <p className={`font-bold ${collapsed ? 'hidden' : 'block'}`}>Your Library</p>
                   </div>
                   <button title="Create Playlist" className={`cursor-pointer bg-fg_0 hover:bg-fg_02 ${collapsed ? 'hidden' : 'block'} transition-all duration-300 rounded-full p-2`}>

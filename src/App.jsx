@@ -9,6 +9,7 @@ import { songsData, albumsData } from './assets/assets'
 //   console.log("React is loaded")
 // }
 
+
 const App = () => {
   let audioRef = React.useRef(null);
   let [currentSongIndex, setCurrentSongIndex] = React.useState(1);
@@ -43,9 +44,31 @@ const App = () => {
     }
   }
 
-  let [CurrentSongData, setCurrentSongData] = React.useState(
+  let [currentSongData, setCurrentSongData] = React.useState(
     checkForLocalStorage())
 
+  let [progress, setProgress] = React.useState(0);
+
+  const changeSong = React.useCallback((nextIndex) => {
+
+    let newIndex = nextIndex;
+
+    if (newIndex < 0) {
+      return;
+    }
+
+    if (!songsData[newIndex]) {
+      setIsPlaying(false);
+      setProgress(0.015);
+      return;
+    }
+
+    setCurrentSongIndex(newIndex);
+    setCurrentSongData(songsData[newIndex]);
+    setIsPlaying(true);
+    setProgress(0.015);
+
+  }, [setCurrentSongIndex, setCurrentSongData, setIsPlaying]);
 
   return (
     <div
@@ -53,7 +76,10 @@ const App = () => {
     >
       <div className="h-screen bg-bg_0">
         <FancyVisualizer
-          CurrentSongData={CurrentSongData}
+          progress={progress}
+          setProgress={setProgress}
+          changeSong={changeSong}
+          currentSongData={currentSongData}
           setCurrentSongData={setCurrentSongData}
           currentSongIndex={currentSongIndex}
           setCurrentSongIndex={setCurrentSongIndex}
@@ -61,12 +87,16 @@ const App = () => {
           setFancy={setFancy}
           isPlaying={isPlaying}
           setIsPlaying={setIsPlaying}
+          audioRef={audioRef}
         />
         <div className="h-[90%] flex">
           <Sidebar />
         </div>
         <PlayerBar
-          CurrentSongData={CurrentSongData}
+          progress={progress}
+          setProgress={setProgress}
+          changeSong={changeSong}
+          currentSongData={currentSongData}
           setCurrentSongData={setCurrentSongData}
           currentSongIndex={currentSongIndex}
           setCurrentSongIndex={setCurrentSongIndex}
