@@ -91,6 +91,7 @@ const FancyVisualizer = ({ progress, setProgress, audioRef, changeSong, currentS
                         {/* Previous */}
                         <button id="prev" onClick={() => {
                             if (progress > 3) {
+                                changeSong("update")
                                 setProgress(0.1);
                                 audioRef.current.currentTime = 0
                             } else {
@@ -103,7 +104,7 @@ const FancyVisualizer = ({ progress, setProgress, audioRef, changeSong, currentS
                     </div>
 
                     <div className='flex flex-col justify-center items-center gap-10'>
-                        <div ref={coverRef} className={` bg-white/0 p-10 rounded-lg group flex flex-row items-center transition-[transform] duration-500 ease-out`}
+                        <div ref={coverRef} className={` bg-debug/0 p-10 rounded-lg group flex flex-row items-center transition-[transform] duration-500 ease-out`}
                             onMouseEnter={() => { handleMouseEnter(), setHovering(true) }}
                             onMouseMove={handleMouseMove}
                             onMouseLeave={() => { handleMouseLeave(), setHovering(false) }}
@@ -114,10 +115,21 @@ const FancyVisualizer = ({ progress, setProgress, audioRef, changeSong, currentS
                                 className={`
                             cursor-pointer shrink-0 brightness-110 relative z-20 items-center w-160 h-160 rounded-lg ${isVinylOut ? "left-[10%]" : "left-[25%]"} transition-[left] duration-300`} src={currentSongData.image} alt="Album Cover"
                             />
-
-                            <img id="vinyl" style={{
-                                backgroundColor: albumsData[currentSongData.album_id].bgColor
-                            }} className={`cursor-pointer shrink-0 relative flex z-10 w-150 h-150 rounded-full ${isVinylOut ? "right-[10%] pointer-events-auto" : "right-[25%] pointer-events-none"} animate-vinyl ${isPlaying ? '[animation-play-state:running]' : '[animation-play-state:paused]'}  transition-all duration-300`} src={albumCovers.vinyl} onClick={() => setIsPlaying(!isPlaying)} />
+                            <button id="play-pause" className='m-0 p-0 bg-debug/0 w-full' onClick={() => {
+                                if (!isPlaying) {
+                                    audioRef.current.play();
+                                    audioRef.current.currentTime = progress;
+                                    setIsPlaying(true)
+                                } else {
+                                    setIsPlaying(false)
+                                    audioRef.current.pause();
+                                }
+                            }}
+                            >
+                                <img id="vinyl" style={{
+                                    backgroundColor: albumsData[currentSongData.album_id].bgColor
+                                }} className={`cursor-pointer shrink-0 relative flex z-10 w-150 h-150 rounded-full ${isVinylOut ? "right-[25%] pointer-events-auto" : "right-[50%] pointer-events-none"} animate-vinyl ${isPlaying ? '[animation-play-state:running]' : '[animation-play-state:paused]'}  transition-all duration-300`} src={albumCovers.vinyl} />
+                            </button>
                         </div>
                         <p
                             style={{

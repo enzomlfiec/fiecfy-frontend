@@ -3,6 +3,8 @@
 
 /* Dark Theme */
 @theme {
+  --color-debug: #ff00ff;
+
   --color-p_0: #2dd76a;
   --color-p_01: #1db954;
   --color-p_02: #1aa34a;

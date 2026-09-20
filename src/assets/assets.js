@@ -73,22 +73,25 @@ import osaru from './music/albums/MIDORI/Osaru.mp3'
 import suki from './music/albums/MIDORI/Suki.mp3'
 import yukikosan from './music/albums/MIDORI/Yukikosan.mp3'
 
-import beauty from './music/albums/SINISTER_MINDS/Beauty.mp3'
-import bigMisser from './music/albums/SINISTER_MINDS/Big Misser.mp3'
-import dontComeBack from './music/albums/SINISTER_MINDS/Don_t Come Back..mp3'
-import feelThatDread from './music/albums/SINISTER_MINDS/Feel That Dread？.mp3'
-import iDidThat from './music/albums/SINISTER_MINDS/I Did That.mp3'
-import iMissTheQuiet from './music/albums/SINISTER_MINDS/I Miss The Quiet.mp3'
-import redHanded from './music/albums/SINISTER_MINDS/Lord X ft. Redglove, Deutsch - Red-Handed (Lyric Video) ｜ Sinister Minds.mp3'
-import meatshow from './music/albums/SINISTER_MINDS/Meatshow.mp3'
-import minds from './music/albums/SINISTER_MINDS/Minds.mp3'
-import oneLastAsk from './music/albums/SINISTER_MINDS/One Last Ask.mp3'
-import runaway from './music/albums/SINISTER_MINDS/RUNAWAY.mp3'
-import scars from './music/albums/SINISTER_MINDS/Scars.mp3'
-import sinister from './music/albums/SINISTER_MINDS/Sinister.mp3'
-import theFireRises from './music/albums/SINISTER_MINDS/The Fire Rises.mp3'
-import welcomeHome from './music/albums/SINISTER_MINDS/Welcome Home.mp3'
-import youMustAnswer from './music/albums/SINISTER_MINDS/You Must Answer.mp3'
+import beauty from './music/albums/SINISTER_MINDS/Beauty.flac'
+import bigMisser from './music/albums/SINISTER_MINDS/Big Misser.flac'
+import dontComeBack from './music/albums/SINISTER_MINDS/Don_t Come Back.flac'
+import feelThatDread from './music/albums/SINISTER_MINDS/Feel That Dread.flac'
+import iDidThat from './music/albums/SINISTER_MINDS/I Did That.flac'
+import iMissTheQuiet from './music/albums/SINISTER_MINDS/I Miss The Quiet.flac'
+import redHanded from './music/albums/SINISTER_MINDS/Red-Handed.flac'
+import meatshow from './music/albums/SINISTER_MINDS/Meatshow.flac'
+import minds from './music/albums/SINISTER_MINDS/Minds.flac'
+import oneLastAsk from './music/albums/SINISTER_MINDS/One Last Ask.flac'
+import runaway from './music/albums/SINISTER_MINDS/RUNAWAY.flac'
+
+import stsolis from './music/albums/SINISTER_MINDS/St. Solis.flac'
+
+import scars from './music/albums/SINISTER_MINDS/Scars.flac'
+import sinister from './music/albums/SINISTER_MINDS/Sinister.flac'
+import theFireRises from './music/albums/SINISTER_MINDS/The Fire Rises.flac'
+import welcomeHome from './music/albums/SINISTER_MINDS/Welcome Home.flac'
+import youMustAnswer from './music/albums/SINISTER_MINDS/You Must Answer.flac'
 
 import rudeBuster from './music/albums/DELTARUNE/Rude Buster.mp3'
 import fieldOfHopesAndDreams from './music/albums/DELTARUNE/Field of Hopes and Dreams.mp3'
@@ -205,6 +208,7 @@ const music = {
   minds,
   oneLastAsk,
   runaway,
+  stsolis,
   scars,
   sinister,
   theFireRises,
@@ -304,6 +308,15 @@ export const albumsData = [
     image: albumCovers.img6,
     desc: 'Selected favorites from Judgment',
     bgColor: '#645540',
+  },
+
+  {
+    id: 6,
+    name: 'Sinister Minds - St.Solis',
+    artist: 'Churgney Gurgney',
+    image: albumCovers.img7,
+    desc: 'Sinister Minds by Churgney Gurgney',
+    bgColor: '#ff0000',
   },
 ]
 
@@ -645,6 +658,17 @@ export const songsData = [
   },
 
   {
+    id: 123,
+    name: 'St.Solis',
+    artist: 'Churgney Gurgney, Marley Jauz, MaimyMayo',
+    image: albumCovers.img7,
+    album_id: 6,
+    file: music.stsolis,
+    desc: 'Sinister Minds',
+    duration: '4:38',
+  },
+
+  {
     id: 29,
     name: 'Red-Handed',
     artist: 'Churgney Gurgney, Marley Jauz, MaimyMayo',
@@ -654,6 +678,7 @@ export const songsData = [
     desc: 'Sinister Minds',
     duration: '4:49',
   },
+
 
   {
     id: 30,

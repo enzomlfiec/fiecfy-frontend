@@ -5,10 +5,10 @@ import { assets } from '../assets/assets'
 
 const Sidebar = () => {
 
-  let [hovering, setHovering] = React.useState(false)
-  let [hoveringInput, setHoveringInput] = React.useState(false)
-  let [collapsed, setCollapsed] = React.useState(false)
-  let [searching, setSearching] = React.useState(false)
+  const [hovering, setHovering] = React.useState(false)
+  const [hoveringInput, setHoveringInput] = React.useState(false)
+  const [collapsed, setCollapsed] = React.useState(false)
+  const [searching, setSearching] = React.useState(false)
   let searchInputRef = React.useRef(null);
 
   function focusOn() {

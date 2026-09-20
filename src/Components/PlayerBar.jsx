@@ -1,4 +1,5 @@
 // /* eslint-disable no-unused-vars */
+// eslint-disable-next-line no-unused-vars
 import React from 'react'
 import PlayerControls from './PlayerControls'
 import { assets } from '../assets/assets'
@@ -11,20 +12,9 @@ import VolumeControls from './VolumeControls'
 // desc: 'x',
 // bgColor: '#x',
 ``
-const PlayerBar = ({ progress, setProgress, changeSong, currentSongData, setCurrentSongData, currentSongIndex, setCurrentSongIndex, isFancyOpen, setFancy, isPlaying, setIsPlaying, audioRef }) => {
-
-    let [volume, setVolume] = React.useState(50)
-    React.useEffect(() => {
-        if (audioRef.current) {
-            audioRef.current.volume = ((volume) / 200);
-        }
-    }, [volume, audioRef]);
-
-
-
+const PlayerBar = ({progress, setProgress, changeSong, currentSongData, setCurrentSongData, currentSongIndex, setCurrentSongIndex, isFancyOpen, setFancy, isPlaying, setIsPlaying, isLooping, setIsLooping, inShuffle, setInShuffle, audioRef , volume, setVolume}) => {
     return (
         <>
-            <audio ref={audioRef} src={currentSongData.file} volume={volume}></audio>
             <div id="player" className="bg-abw_0 h-[10%] flex items-center justify-between text-abw_1 px-4">
                 <div id="SongInfo" className="hidden xl:flex item-center gap-4 w-[20vw]">
                     <div className="group flex bg-black">
@@ -52,6 +42,11 @@ const PlayerBar = ({ progress, setProgress, changeSong, currentSongData, setCurr
                         audioRef={audioRef}
                         isPlaying={isPlaying}
                         setIsPlaying={setIsPlaying}
+                        audioRef={audioRef}
+                        isLooping={isLooping}
+                        setIsLooping={setIsLooping}
+                        inShuffle={inShuffle}
+                        setInShuffle={setInShuffle}
                     />
                 </div>
                 <div id="volumeControl">
