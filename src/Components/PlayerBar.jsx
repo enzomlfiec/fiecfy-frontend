@@ -18,8 +18,8 @@ const PlayerBar = ({progress, setProgress, changeSong, currentSongData, setCurre
             <div id="player" className="bg-abw_0 h-[10%] flex items-center justify-between text-abw_1 px-4">
                 <div id="SongInfo" className="hidden xl:flex item-center gap-4 w-[20vw]">
                     <div className="group flex bg-black">
-                        <img className="shrink-0 absolute bottom-[2%] left-[1.2%] items-center w-16 h-16 max-w-16 min-w-16 rounded cursor-pointer opacity-0 group-hover:opacity-100 transition-all duration-300" src={assets.icons.zoom_icon} alt="uparrow" onClick={() => (setFancy(!isFancyOpen))} />
-                        <img className="shrink-0 items-center w-24 h-24 rounded cursor-pointer hover:opacity-30 hover:m-0 transition-all duration-300" src={currentSongData.image} alt="Album Cover" onClick={() => setFancy(!isFancyOpen)} />
+                        <img className="shrink-0 absolute bottom-[2.2%] left-[1.5%] items-center w-[2.5vw] h-[2.5vw] max-w-[2.5vw] min-w-[2.5vw] rounded cursor-pointer opacity-0 group-hover:opacity-100 transition-all duration-300" src={assets.icons.zoom_icon} alt="uparrow" onClick={() => (setFancy(!isFancyOpen))} />
+                        <img className="shrink-0 items-center w-[4vw] h-[4vw] rounded cursor-pointer hover:opacity-30 hover:m-0 transition-all duration-300" src={currentSongData.image} alt="Album Cover" onClick={() => setFancy(!isFancyOpen)} />
                     </div>
 
                     <div className='flex justify-center flex-col'>

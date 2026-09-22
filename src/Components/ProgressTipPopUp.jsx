@@ -34,13 +34,13 @@ const ProgressTipPopUp = ({ progressValue, show, fullProgress }) => {
         return () => {
             window.removeEventListener('mousemove', handleMouseMove)
         }
-    }, [show])
+    }, [show,fullProgress,progressValue])
     return (
         <div
             className={`bg-bg_02 absolute p-2 rounded-lg ${show ? "visible" : "hidden"}`}
             style={{
                 left: mousePosition.x - 20,
-                top: "93%"
+                top: "92%"
             }}
         >
             <p>{progressValue}</p>

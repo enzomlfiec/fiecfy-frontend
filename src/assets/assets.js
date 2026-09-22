@@ -44,8 +44,6 @@ import img7 from './images/albums/img7.jpg'
 // import img15 from './images/albums/img15.jpg'
 // import img16 from './images/albums/img16.jpg'
 
-import vinyl from './images/vinyl.png'
-
 import actRight from './music/albums/CHASER/ACT RIGHT.mp3'
 import girlHell1999 from './music/albums/CHASER/GIRL HELL 1999.mp3'
 import katamari from './music/albums/CHASER/KATAMARI.mp3'
@@ -165,8 +163,19 @@ const albumCovers = {
   img5,
   img6,
   img7,
-  vinyl,
+
 }
+
+import vinyl from './images/vinyl.png'
+import logo_icon from './images/FiecfyIcon.png'
+
+const images = {
+  vinyl,
+  logo_icon,
+}
+
+export { images }
+
 export { albumCovers }
 
 const music = {
@@ -263,6 +272,7 @@ export const albumsData = [
     image: albumCovers.img1,
     desc: 'CHASER by femtanyl',
     bgColor: '#FF0328',
+    trackList: [0, 1, 2, 3, 4, 5],
   },
 
   {
@@ -272,6 +282,7 @@ export const albumsData = [
     image: albumCovers.img2,
     desc: 'Aratamemashite, Hajimemashite, Midori desu by Midori',
     bgColor: '#FFFFFF',
+    trackList: [6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
   },
 
   {
@@ -281,15 +292,27 @@ export const albumsData = [
     image: albumCovers.img3,
     desc: 'Sinister Minds by Churgney Gurgney',
     bgColor: '#000000',
+    trackList: [16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31],
+  },
+
+    {
+    id: 6,
+    name: 'Sinister Minds - St.Solis',
+    artist: 'Churgney Gurgney',
+    image: albumCovers.img7,
+    desc: 'Sinister Minds by Churgney Gurgney',
+    bgColor: '#ff0000',
+    trackList: [69],
   },
 
   {
     id: 3,
     name: 'Best of Deltarune OST',
     artist: 'Toby Fox',
-    image: albumCovers.img2,
+    image: albumCovers.img4,
     desc: 'My favorite Deltarune tracks',
     bgColor: '#AA0000',
+    trackList: [32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45],
   },
 
   {
@@ -299,6 +322,7 @@ export const albumsData = [
     image: albumCovers.img5,
     desc: 'Selected favorites from Yakuza 0',
     bgColor: '#A51F28',
+    trackList: [46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60],
   },
 
   {
@@ -308,15 +332,7 @@ export const albumsData = [
     image: albumCovers.img6,
     desc: 'Selected favorites from Judgment',
     bgColor: '#645540',
-  },
-
-  {
-    id: 6,
-    name: 'Sinister Minds - St.Solis',
-    artist: 'Churgney Gurgney',
-    image: albumCovers.img7,
-    desc: 'Sinister Minds by Churgney Gurgney',
-    bgColor: '#ff0000',
+    trackList: [61, 62, 63, 64, 65, 66, 67, 68],
   },
 ]
 
@@ -655,17 +671,6 @@ export const songsData = [
     file: music.runaway,
     desc: 'Sinister Minds',
     duration: '4:04',
-  },
-
-  {
-    id: 123,
-    name: 'St.Solis',
-    artist: 'Churgney Gurgney, Marley Jauz, MaimyMayo',
-    image: albumCovers.img7,
-    album_id: 6,
-    file: music.stsolis,
-    desc: 'Sinister Minds',
-    duration: '4:38',
   },
 
   {
@@ -1098,5 +1103,16 @@ export const songsData = [
     file: music.penumbra,
     desc: 'Judgment — Favorites',
     duration: '5:22',
+  },
+
+  {
+    id: 69,
+    name: 'St.Solis',
+    artist: 'Churgney Gurgney, Marley Jauz, MaimyMayo',
+    image: albumCovers.img7,
+    album_id: 6,
+    file: music.stsolis,
+    desc: 'Sinister Minds',
+    duration: '4:38',
   },
 ]

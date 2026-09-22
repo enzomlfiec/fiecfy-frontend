@@ -154,7 +154,9 @@ const App = () => {
             audioRef={audioRef}
           />
           <div className="h-[90%] flex">
-            <Sidebar />
+            <Sidebar 
+            changeSong={changeSong}
+            />
           </div>
           <PlayerBar
             progress={progress}

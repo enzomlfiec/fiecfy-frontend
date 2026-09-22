@@ -1,9 +1,10 @@
 
 import React from 'react'
+import SidebarElement from './SidebarElement'
 
-import { assets } from '../assets/assets'
+import { assets, images, albumsData } from '../assets/assets'
 
-const Sidebar = () => {
+const Sidebar = ({changeSong}) => {
 
   const [hovering, setHovering] = React.useState(false)
   const [hoveringInput, setHoveringInput] = React.useState(false)
@@ -42,10 +43,13 @@ const Sidebar = () => {
 
   return (
     <>
-      <div className={`h-full w-full justify-center items-baseline flex flex-col`}>
-        <p className={`text-p_0/5 text-1xl line-through`}>Insira aqui a logo do fiecfy</p>
+      <div className={`h-full w-full justify-baseline items-baseline flex flex-col`}>
+        <div className='overflow-hidden flex flex-row items-center justify-center gap-5 text-p_0 text-center font-bold text-3xl select-none relative left-5'>
+          <img draggable={false} src={images.logo_icon} className='select-none shrink-0 mt-3 mb-1 w-16 h-16 hover:rotate-360 transition-all duration-500' />
+          <p className={`relative top-1.5 ${collapsed ? "w-0" : "w-21"} transition-all duration-300`}>Fiecfy</p>
+        </div>
 
-        <div className={`m-2 select-none min-w-25  h-full p-2 flex-col gap-2 hidden xl:flex overflow-hidden ${collapsed ? 'w-[5%] text-[rgba(255,255,255,0.1)]' : 'w-[20%] text-[rgba(255,255,255,1.0)]'} transition-all duration-300`}>
+        <div className={`select-none min-w-25  h-full p-2 flex-col gap-2 hidden xl:flex overflow-hidden ${collapsed ? 'w-[5%] text-[rgba(255,255,255,0.1)]' : 'w-[20%] text-[rgba(255,255,255,1.0)]'} transition-all duration-300`}>
           {/* Home */}
           <div className="bg-bg_02 hover:bg-bg_03 rounded-2xl cursor-pointer transition-all duration-300 flex flex-col justify-around">
             <div className={`flex items-center gap-3 p-5 pl-7.5 ${collapsed ? '' : ''} `}>
@@ -62,21 +66,38 @@ const Sidebar = () => {
             </div>
           </div>
           {/* Your Library */}
-          <div className="bg-bg_02 h-[85%] rounded-2xl">
-            <div onMouseEnter={() => setHovering(true)} onMouseLeave={() => setHovering(false)} className={`cursor-pointer ${hovering ? 'pl-2' : 'pl-0'} hover:bg-bg_03 rounded-2xl transition-all duration-300`}>
-              <div className={`flex items-center justify-between ${hovering ? 'pl-0' : 'pl-7.5'}`}>
+          <div className="bg-bg_02 h-[85%] rounded-xl overflow-hidden flex flex-col shrink-0">
+            <div onMouseEnter={() => setHovering(true)} onMouseLeave={() => setHovering(false)} className={`cursor-pointer ${hovering ? 'pl-2' : 'pl-0'} hover:bg-bg_03 rounded-bl-xl rounded-tl transition-all duration-300`}>
+              <div className={`rounded-xl flex items-center justify-between ${hovering ? 'pl-0' : 'pl-7.5'}`}>
                 <div className={`flex items-center justify-between w-full pr-6 transition-all ${hovering ? 'gap-3' : 'gap-0'}`}>
-                  <div className={` pt-4 pb-4 flex items-center gap-3 w-full justify-baseline ${hovering ? 'pr-0' : 'pr-0'}`} onClick={() => focusOff(!collapsed)}>
+                  <div className={` pt-4 pb-4 flex items-center gap-3 w-full justify-baseline ${hovering ? 'pr-0' : 'pr-0'}`} onClick={() => { focusOff(!collapsed) }}>
                     <button title="Collapse" className={`opacity-0 rotate-0 ${hovering ? 'cursor-pointer opacity-100 block' : 'hidden'} ${collapsed ? 'rotate-180' : ''} transition-all duration-300`}>
                       <img className={`w-6 shrink-0`} src={assets.icons.arrow_left} alt="Library" />
                     </button>
                     <img className="w-6 mix-blend-lighten mr-2" src={collapsed ? assets.icons.library_icon_alt : assets.icons.library_icon} alt="Library" />
                     <p className={`font-bold ${collapsed ? 'hidden' : 'block'}`}>Your Library</p>
                   </div>
-                  <button title="Create Playlist" className={`cursor-pointer bg-fg_0 hover:bg-fg_02 ${collapsed ? 'hidden' : 'block'} transition-all duration-300 rounded-full p-2`}>
+                  <button title="Create Playlist" className={`cursor-pointer bg-fg_0 hover:bg-fg_02 ${collapsed ? 'hidden' : 'block'} ${hovering ? "opacity-100" : "opacity-0"} transition-all duration-300 rounded-full p-2`}>
                     <img className={`w-6 shrink-0`} src={assets.icons.plus_icon} alt="Settings" />
                   </button>
                 </div>
+              </div>
+            </div>
+            <div className="playlist-scroll flex-1 min-h-0 overflow-y-auto">
+              <div className="flex flex-col items-start gap-2 mb-10 mt-2">
+                {
+                  // Array.from({ length: albumsData.length }).map((item, index) => (
+                    Array.from({ length: albumsData.length }).map((item, index) => (
+                      <SidebarElement
+                        key={index}
+                        collapsed={collapsed}
+                        item={item}
+                        index={index}
+                        changeSong={changeSong}
+                      />
+                    ))
+                  // ))
+                }
               </div>
             </div>
           </div>

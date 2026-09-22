@@ -42,11 +42,11 @@ const PlayerProgressBar = ({ isPlaying, isLooping, progress, setProgress, curren
                     return fullProgress;
                 }
                 if (prevProgress < fullProgress) {
-                    return prevProgress + 0.1
+                    return audioRef.current.currentTime
                 }
             });
             ELSD("w", "lastProgress", progress)
-        }, 100);
+        }, 300);
         return () => clearInterval(interval);
     }, [isPlaying, isLooping, setProgress, currentSongData, fullProgress, currentSongIndex, audioRef, progress]);
 
@@ -89,8 +89,9 @@ const PlayerProgressBar = ({ isPlaying, isLooping, progress, setProgress, curren
             <div className='flex items-center text-left gap-5'>
                 <p className="text-sm sm:text-base text-fg_03 relative top-[0.25vw]">{safeFormat(progress * 1000)}</p>
                 <div className='bg-debug/0'
-                    onChange={(e) => setProgress(Number(e.target.value))}
-                    onMouseEnter={() => setHovering(true)} onMouseLeave={() => setHovering(false)}
+                    
+
+
                 >
 
                     <input id="progress-bar" type="range" min="0" max={fullProgress}
@@ -102,14 +103,17 @@ const PlayerProgressBar = ({ isPlaying, isLooping, progress, setProgress, curren
                                 `${hovering ? 'var(--color-fg_0)' : 'var(--color-fg_01)'}` +
                                 `0%)`
                         }}
-                        value={capped(progress)} className=" mt-3 progressBar w-[40vw] h-2 hover:h-4 rounded-full cursor-pointer duration-300"
+                        value={capped(progress)} className=" mt-3 progressBar w-[40vw] h-3 hover:h-4 rounded-full cursor-pointer duration-300"
                         onClick={() => { changePosition(hoveredPosition) }}
+                        onMouseEnter={() => setHovering(true)}
+                        onChange={(e) => setProgress(Number(e.target.value))}
+                        onMouseLeave={() => setHovering(false)}
                         onMouseMove={(e) => {
                             const slider = e.currentTarget
                             const rect = slider.getBoundingClientRect()
                             const position = (e.clientX - rect.left) / rect.width
                             const value = slider.min * 1 + position * (slider.max - slider.min)
-                            console.log(safeFormat(value* 1000))
+                            console.log(safeFormat(value * 1000))
                             setHoveringPosition(Number(value))
                             console.log(value)
                         }}

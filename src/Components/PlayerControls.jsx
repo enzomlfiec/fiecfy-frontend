@@ -27,6 +27,7 @@ const PlayerControls = ({ changeSong, progress, setProgress, currentSongData, se
                         src={assets.icons.prev_icon} />
                 </button>
                 <button id="play-pause" onClick={() => {
+                    setProgress(audioRef.current.currentTime)
                     if (!isPlaying) {
                         audioRef.current.play();
                         audioRef.current.currentTime = progress;

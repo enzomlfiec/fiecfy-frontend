@@ -5,15 +5,15 @@
 @theme {
   --color-debug: #ff00ff;
 
-  --color-p_0: #2dd76a;
-  --color-p_01: #1db954;
-  --color-p_02: #1aa34a;
-  --color-p_03: #117032;
+  --color-p_0: #00DB72;
+  --color-p_01: #00B768;
+  --color-p_02: #007A61;
+  --color-p_03: #005B5F;
 
-  --color-bg_0: #0f0f0f;
-  --color-bg_01: #111111;
-  --color-bg_02: #222222;
-  --color-bg_03: #333333;
+  --color-bg_0: #030303;
+  --color-bg_01: #0A0A0A;
+  --color-bg_02: #121212;
+  --color-bg_03: #2a2a2a;
 
   --color-fg_0: #454545;
   --color-fg_01: #555555;
@@ -145,4 +145,25 @@ html {
 
 .overlay.vinyl-out::before {
   opacity: 1;
+}
+
+
+.playlist-scroll::-webkit-scrollbar {
+  width: 10px;
+}
+
+.playlist-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.playlist-scroll::-webkit-scrollbar-thumb {
+  background: var(--color-fg_03);
+  opacity: 10%;
+  border-radius: 0;
+}
+
+.playlist-scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--color-fg_03);
+  opacity: 100%;
+  border-radius: 0;
 }
