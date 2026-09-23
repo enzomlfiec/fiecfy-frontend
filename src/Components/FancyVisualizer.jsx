@@ -5,7 +5,6 @@ import { images, albumsData, assets } from '../assets/assets'
 
 const FancyVisualizer = ({ progress, setProgress, audioRef, changeSong, currentSongIndex, currentSongData, isFancyOpen, setFancy, isPlaying, setIsPlaying }) => {
 
-
     const [hovering, setHovering] = React.useState(false)
     const [isVinylOut, setIsVinylOut] = React.useState(false)
     // const [,] = React.useState(false)
@@ -30,7 +29,7 @@ const FancyVisualizer = ({ progress, setProgress, audioRef, changeSong, currentS
         const rect = rectRef.current
         const x = event.clientX - rect.left
         const y = event.clientY - rect.top
-        let warpStrengh = isVinylOut ? 10 : 20;
+        let warpStrengh = isVinylOut ? 5 : 20;
 
         const rotateY = ((x - rect.width / 2) / (rect.width / 2)) * warpStrengh
         const rotateX = -((y - rect.height / 2) / (rect.height / 2)) * warpStrengh
@@ -58,23 +57,19 @@ const FancyVisualizer = ({ progress, setProgress, audioRef, changeSong, currentS
         }
     }
 
-    // const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
+    React.useEffect(() => {
+        const handleKeyUp = (e) => {
+            if (e.key === "Escape") {
+                clickAway();
+            }
+        };
 
-    // React.useEffect(() => {
-    //     // 1. Define the function to update state on resize
-    //     const handleResize = () => {
-    //         setWindowWidth(window.innerWidth);
-    //     };
+        window.addEventListener("keyup", handleKeyUp);
 
-    //     // 2. Add event listener when component mounts
-    //     window.addEventListener('resize', handleResize);
-
-    //     // 3. Clean up event listener when component unmounts
-    //     return () => {
-    //         window.removeEventListener('resize', handleResize);
-    //     };
-    // }, []); // Empty dependency array ensures it runs once on mount
-
+        return () => {
+            window.removeEventListener("keyup", handleKeyUp);
+        };
+    }, [clickAway]);
 
     return (
         <>
@@ -85,13 +80,15 @@ const FancyVisualizer = ({ progress, setProgress, audioRef, changeSong, currentS
                     style={{
                         "--album-color": albumsData[currentSongData.album_id].bgColor
                     }}
-                    className={`select-none ${isVinylOut ? "overlay vinyl-out" : "overlay"} shrink-0 fixed inset-0 items-center flex justify-center z-30 ${isFancyOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"} ${isVinylOut ? "backdrop-grayscale-0" : "bg-black/80 backdrop-grayscale-100"}`} onClick={() => clickAway()}>
+                    className={`select-none ${isVinylOut ? "overlay vinyl-out" : "overlay"} shrink-0 fixed inset-0 items-center flex justify-center z-30 ${isFancyOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"} ${isVinylOut ? "backdrop-grayscale-100" : "bg-black/80 backdrop-grayscale-100"}`}
+                    onClick={() => clickAway()}
+                >
                     <div id="prevFancy">
 
                         {/* Previous */}
                         <button id="prev" onClick={() => {
                             if (progress > 3) {
-                                changeSong("update")
+                                // changeSong("update")
                                 setProgress(0.1);
                                 audioRef.current.currentTime = 0
                             } else {
@@ -113,32 +110,54 @@ const FancyVisualizer = ({ progress, setProgress, audioRef, changeSong, currentS
                             <img id="cover"
                                 onClick={() => setIsVinylOut(!isVinylOut)}
                                 className={`flex flex-row justify-center
-                            shrink-0 brightness-110 relative z-20 items-center w-160 h-160 rounded-lg cursor-pointer ${isVinylOut ? "cursor-none left-[10%]" : " left-[25%]"} transition-[left] duration-300`} src={currentSongData.image} alt="Album Cover"
+                            shrink-0 brightness-110 relative z-20 items-center w-160 h-160 rounded-lg ${isVinylOut ? "cursor-none left-[10%]" : "cursor-pointer left-[25%]"} transition-[left] duration-300`} src={currentSongData.image} alt="Album Cover"
                             />
-                            <button id="play-pause" className='m-0 p-0 bg-debug/0 w-full' onClick={() => {
-                                if (isVinylOut) {
-                                    setProgress(audioRef.current.currentTime)
-                                    if (!isPlaying) {
-                                        audioRef.current.play();
-                                        audioRef.current.currentTime = progress;
-                                        setIsPlaying(true)
-                                    } else {
-                                        setIsPlaying(false)
-                                        audioRef.current.pause();
-                                    }
-                                }
-                            }}
-                            >
-                                <img id="vinyl" style={{
-                                    backgroundColor: albumsData[currentSongData.album_id].bgColor
-                                }} className={`cursor-pointer shrink-0 relative flex z-10 w-150 h-150 rounded-full ${isVinylOut ? "right-[25%] pointer-events-auto" : "right-[50%] pointer-events-none"} animate-vinyl ${isPlaying ? '[animation-play-state:running]' : '[animation-play-state:paused]'}  transition-all duration-300`} src={images.vinyl} />
-                            </button>
+                            <div>
+                                <div className={`relative ${isVinylOut ? "right-[25%] pointer-events-auto" : "right-[50%] pointer-events-none"} transition-all duration-300`}>
+                                    <img id="vinyl" style={{
+                                        backgroundColor: albumsData[currentSongData.album_id].bgColor
+                                    }} draggable={false} className={`shrink-0 flex z-10 w-150 h-150 rounded-full animate-vinyl ${isPlaying ? '[animation-play-state:running]' : '[animation-play-state:paused]'}  transition-all duration-300 cursor-none `} src={images.vinyl}
+                                    />
+                                    <button id="play-pause" className='m-0 p-0 bg-debug/0 w-full' onClick={() => {
+                                        if (isVinylOut) {
+                                            setProgress(audioRef.current.currentTime)
+                                            if (!isPlaying) {
+                                                audioRef.current.play();
+                                                audioRef.current.currentTime = progress;
+                                                setIsPlaying(true)
+                                            } else {
+                                                setIsPlaying(false)
+                                                audioRef.current.pause();
+                                            }
+                                        }
+                                    }}
+                                    >
+                                        <img src={!isPlaying ? assets.play_icon : assets.pause_icon} draggable={false} className='
+                                        invert
+                                        mix-blend-screen
+                                        opacity-0
+                                        hover:opacity-100
+                                        w-32 h-32 absolute inset-0 left-[75%] top-[37%] cursor-pointer
+                                        transition-all duration-300' />
+                                    </button>
+                                </div>
+
+                            </div>
                         </div>
                         <p
                             style={{
                                 color: isVinylOut ? albumsData[currentSongData.album_id].bgColor : "white"
                             }}
-                            className={`text-xl font-medium cursor-pointer hover:underline z-67 ${isVinylOut ? "hover:duration-100 invert grayscale-100 opacity-5 hover:opacity-100 " : "text-white hover:text-white duration-1000"} transition-all  `} onClick={() => setFancy(false)}>Close</p>
+                            className={`${isVinylOut ? "duration-800 opacity-99" : "duration-300 opacity-0"} select-all text-4xl font-extrabold z-67 ${isVinylOut ? "hover:duration-100 invert grayscale-100 opacity-5 hover:opacity-100 " : "text-white hover:text-white duration-1000"} transition-all`}>{currentSongData.name}
+                        </p>
+
+                        <p
+                            style={{
+                                color: isVinylOut ? albumsData[currentSongData.album_id].bgColor : "white"
+                            }}
+                            className={`text-xl font-medium cursor-pointer hover:underline z-67 ${isVinylOut ? "hover:duration-100 invert grayscale-100 opacity-5 hover:opacity-100 " : "text-white hover:text-white duration-1000"} transition-all  `} onClick={() => setFancy(false)}>Close
+                        </p>
+
                     </div>
 
                     <div id="nextFancy">

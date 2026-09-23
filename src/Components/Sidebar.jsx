@@ -4,8 +4,9 @@ import SidebarElement from './SidebarElement'
 
 import { assets, images, albumsData } from '../assets/assets'
 
-const Sidebar = ({changeSong}) => {
+const Sidebar = ({ changeSong }) => {
 
+  const [hoveringSidebarElements, setHoveringSidebarElements,] = React.useState(false)
   const [hovering, setHovering] = React.useState(false)
   const [hoveringInput, setHoveringInput] = React.useState(false)
   const [collapsed, setCollapsed] = React.useState(false)
@@ -45,11 +46,14 @@ const Sidebar = ({changeSong}) => {
     <>
       <div className={`h-full w-full justify-baseline items-baseline flex flex-col`}>
         <div className='overflow-hidden flex flex-row items-center justify-center gap-5 text-p_0 text-center font-bold text-3xl select-none relative left-5'>
+          <a href="#" target="_blank" rel="noopener noreferrer" href="https://github.com/enzomlfiec">
+
           <img draggable={false} src={images.logo_icon} className='select-none shrink-0 mt-3 mb-1 w-16 h-16 hover:rotate-360 transition-all duration-500' />
+          </a>
           <p className={`relative top-1.5 ${collapsed ? "w-0" : "w-21"} transition-all duration-300`}>Fiecfy</p>
         </div>
 
-        <div className={`select-none min-w-25  h-full p-2 flex-col gap-2 hidden xl:flex overflow-hidden ${collapsed ? 'w-[5%] text-[rgba(255,255,255,0.1)]' : 'w-[20%] text-[rgba(255,255,255,1.0)]'} transition-all duration-300`}>
+        <div className={`select-none min-w-25  h-full p-2 flex-col gap-2 hidden xl:flex overflow-hidden ${collapsed ? (hoveringSidebarElements ? "w-[5.8%] " : "w-[5%] ") + 'text-[rgba(255,255,255,0.1)]' : 'w-[20%] text-[rgba(255,255,255,1.0)]'} transition-all duration-300`}>
           {/* Home */}
           <div className="bg-bg_02 hover:bg-bg_03 rounded-2xl cursor-pointer transition-all duration-300 flex flex-col justify-around">
             <div className={`flex items-center gap-3 p-5 pl-7.5 ${collapsed ? '' : ''} `}>
@@ -83,10 +87,13 @@ const Sidebar = ({changeSong}) => {
                 </div>
               </div>
             </div>
-            <div className="playlist-scroll flex-1 min-h-0 overflow-y-auto">
+            <div className={`playlist-scroll flex-1 min-h-0 ${hoveringSidebarElements ? "overflow-y-auto" : "overflow-y-hidden"}`}
+              onMouseEnter={() => setHoveringSidebarElements(true)}
+              onMouseLeave={() => setHoveringSidebarElements(false)}
+            >
               <div className="flex flex-col items-start gap-2 mb-10 mt-2">
                 {
-                  // Array.from({ length: albumsData.length }).map((item, index) => (
+                  // Array.from({ length: albumsData.length }).map(() => (
                     Array.from({ length: albumsData.length }).map((item, index) => (
                       <SidebarElement
                         key={index}

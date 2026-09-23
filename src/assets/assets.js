@@ -731,7 +731,7 @@ export const songsData = [
     album_id: 3,
     file: music.fieldOfHopesAndDreams,
     desc: 'Best of Deltarune OST',
-    duration: '2:41',
+    duration: '2:46',
   },
 
   {
@@ -764,7 +764,7 @@ export const songsData = [
     album_id: 3,
     file: music.bigShot,
     desc: 'Best of Deltarune OST',
-    duration: '2:22',
+    duration: '2:24',
   },
 
   {

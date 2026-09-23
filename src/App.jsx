@@ -98,7 +98,7 @@ const App = () => {
 
     ELSD("w", "lastSongIndex", newIndex);
     ELSD("w", "lastProgress", 0,false);
-  }, [progress]);
+  }, []);
 
 
 
