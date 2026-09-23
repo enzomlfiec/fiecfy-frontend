@@ -9,12 +9,21 @@ const FancyVisualizer = ({ progress, setProgress, audioRef, changeSong, currentS
     const [isVinylOut, setIsVinylOut] = React.useState(false)
     // const [,] = React.useState(false)
 
-    function clickAway() {
+    const toggleFullscreen = () => {
+        let isFullscreen = document.fullscreenElement !== null;
+        if (isFullscreen) {
+            document.exitFullscreen()
+        } else {
+            document.documentElement.requestFullscreen()
+        }
+    }
+
+    const clickAway = React.useCallback(() => {
         if (!hovering && !isVinylOut) {
             setFancy(false)
             setIsVinylOut(false)
         }
-    }
+    }, [hovering, isVinylOut, setFancy, setIsVinylOut])
 
     const coverRef = React.useRef(null)
     const rectRef = React.useRef(null)
@@ -108,7 +117,10 @@ const FancyVisualizer = ({ progress, setProgress, audioRef, changeSong, currentS
                         >
 
                             <img id="cover"
-                                onClick={() => setIsVinylOut(!isVinylOut)}
+                                onClick={() => {
+                                    setIsVinylOut(!isVinylOut)
+                                    toggleFullscreen()
+                                }}
                                 className={`flex flex-row justify-center
                             shrink-0 brightness-110 relative z-20 items-center w-160 h-160 rounded-lg ${isVinylOut ? "cursor-none left-[10%]" : "cursor-pointer left-[25%]"} transition-[left] duration-300`} src={currentSongData.image} alt="Album Cover"
                             />
@@ -137,7 +149,7 @@ const FancyVisualizer = ({ progress, setProgress, audioRef, changeSong, currentS
                                         mix-blend-screen
                                         opacity-0
                                         hover:opacity-100
-                                        w-32 h-32 absolute inset-0 left-[75%] top-[37%] cursor-pointer
+                                        w-32 h-32 absolute inset-0 left-[75%] top-[40%] cursor-pointer
                                         transition-all duration-300' />
                                     </button>
                                 </div>
@@ -148,7 +160,7 @@ const FancyVisualizer = ({ progress, setProgress, audioRef, changeSong, currentS
                             style={{
                                 color: isVinylOut ? albumsData[currentSongData.album_id].bgColor : "white"
                             }}
-                            className={`${isVinylOut ? "duration-800 opacity-99" : "duration-300 opacity-0"} select-all text-4xl font-extrabold z-67 ${isVinylOut ? "hover:duration-100 invert grayscale-100 opacity-5 hover:opacity-100 " : "text-white hover:text-white duration-1000"} transition-all`}>{currentSongData.name}
+                            className={`${isVinylOut ? "duration-800 opacity-99" : "duration-300 opacity-0"} pr-5 pl-5 select-all text-4xl font-extrabold z-67 ${isVinylOut ? "hover:duration-100 invert grayscale-100 opacity-5 hover:opacity-100 " : "text-white hover:text-white duration-1000"} transition-all`}>{currentSongData.name}
                         </p>
 
                         <p
