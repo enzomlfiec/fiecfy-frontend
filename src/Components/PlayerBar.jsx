@@ -42,7 +42,7 @@ const PlayerBar = ({progress, setProgress, changeSong, currentSongData, setCurre
                         audioRef={audioRef}
                         isPlaying={isPlaying}
                         setIsPlaying={setIsPlaying}
-                        audioRef={audioRef}
+
                         isLooping={isLooping}
                         setIsLooping={setIsLooping}
                         inShuffle={inShuffle}
