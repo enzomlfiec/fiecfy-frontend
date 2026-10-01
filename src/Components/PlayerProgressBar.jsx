@@ -2,7 +2,6 @@ import React from 'react'
 import format from 'format-duration'
 import ProgressTipPopUp from './ProgressTipPopUp'
 import ELSD from '../scripts/ELSD'
-// import { songsData } from '../assets/assets'
 
 
 const PlayerProgressBar = ({ isPlaying, isLooping, progress, setProgress, currentSongData, currentSongIndex, audioRef }) => {

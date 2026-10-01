@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
-import { assets } from '../assets/assets'
+import { icons } from '../assets/js/icons'
 import PlayerProgressBar from './PlayerProgressBar'
 
 
@@ -11,7 +11,7 @@ const PlayerControls = ({ changeSong, progress, setProgress, currentSongData, se
             {/* Player Controls */}
             <div className='flex justify-center w-100 gap-5'>
                 <button id="shuffle" onClick={() => setInShuffle(!inShuffle)}>
-                    <img className={` relative w-4 cursor-pointer ${inShuffle ? 'top-1 opacity-100' : 'top-0 opacity-50'} hover:opacity-100 hover:w-4.25 [transition-property:all,top] duration-[300ms,0ms]`} src={inShuffle ? assets.icons.shuffle_icon_alt : assets.icons.shuffle_icon} />
+                    <img className={` relative w-4 cursor-pointer ${inShuffle ? 'top-1 opacity-100' : 'top-0 opacity-50'} hover:opacity-100 hover:w-4.25 [transition-property:all,top] duration-[300ms,0ms]`} src={inShuffle ? icons.shuffle_icon_alt : icons.shuffle_icon} />
                 </button>
 
                 <button id="prev" onClick={() => {
@@ -24,7 +24,7 @@ const PlayerControls = ({ changeSong, progress, setProgress, currentSongData, se
                     }
                 }}>
                     <img className='w-4 cursor-pointer opacity-50 hover:opacity-100 hover:w-4.25 transition-all duration-200'
-                        src={assets.icons.prev_icon} />
+                        src={icons.prev_icon} />
                 </button>
                 <button id="play-pause" onClick={() => {
                     setProgress(audioRef.current.currentTime)
@@ -39,17 +39,17 @@ const PlayerControls = ({ changeSong, progress, setProgress, currentSongData, se
                 }}
 
                 >
-                    <img className='w-8 cursor-pointer hover:opacity-50 hover:w-8.25 transition-all duration-200' src={isPlaying ? assets.icons.pause_icon : assets.icons.play_icon} alt={isPlaying ? "Pause" : "Play"} />
+                    <img className='w-8 cursor-pointer hover:opacity-50 hover:w-8.25 transition-all duration-200' src={isPlaying ? icons.pause_icon : icons.play_icon} alt={isPlaying ? "Pause" : "Play"} />
                 </button>
 
                 <button id="next" onClick={() => {
                     changeSong(currentSongIndex + 1)
                 }}>
-                    <img className='w-4 cursor-pointer opacity-50 hover:opacity-100 hover:w-4.25 transition-all duration-200' src={assets.icons.next_icon} />
+                    <img className='w-4 cursor-pointer opacity-50 hover:opacity-100 hover:w-4.25 transition-all duration-200' src={icons.next_icon} />
                 </button>
 
                 <button id="repeat" onClick={() => setIsLooping(!isLooping)}>
-                    <img className={`relative w-4 cursor-pointer ${isLooping ? 'top-1 opacity-100' : 'top-0 opacity-50'} hover:opacity-100 hover:w-4.25 [transition-property:all,top] duration-[300ms,0ms]`} src={isLooping ? assets.icons.loop_icon_alt : assets.icons.loop_icon} />
+                    <img className={`relative w-4 cursor-pointer ${isLooping ? 'top-1 opacity-100' : 'top-0 opacity-50'} hover:opacity-100 hover:w-4.25 [transition-property:all,top] duration-[300ms,0ms]`} src={isLooping ? icons.loop_icon_alt : icons.loop_icon} />
                 </button>
 
             </div>

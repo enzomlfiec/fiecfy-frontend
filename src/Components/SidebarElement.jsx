@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
-import { albumsData, assets } from '../assets/assets'
+import { icons } from '../assets/js/icons'
+import { albumsData } from '../assets/mock/musicMockedData'
 import ELSD from '../scripts/ELSD'
 
 // eslint-disable-next-line no-unused-vars
@@ -25,7 +26,7 @@ const SidebarElement = ({ collapsed, item, index, changeSong }) => {
                     onClick={() => changeSong(albumsData[index].trackList[0])}
                 >
                     <img src={albumsData[index].image} className='h-20 w-20 rounded-lg group-hover:bg-abw_0 group-hover:opacity-50 transition-all duration-100' />
-                    <img src={assets.plays_icon} className='absolute inset-0 m-auto h-12 w-12 opacity-0 group-hover:opacity-100 transition-all duration-100' />
+                    <img src={icons.plays_icon} className='absolute inset-0 m-auto h-12 w-12 opacity-0 group-hover:opacity-100 transition-all duration-100' />
                 </div>
                 <div className={`flex flex-col gap-2 items-baseline justify-center ml-3 ${collapsed ? "opacity-0" : "opacity-100"} transition-all duration-200`}>
                     {

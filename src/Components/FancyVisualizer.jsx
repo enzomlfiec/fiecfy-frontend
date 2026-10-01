@@ -1,6 +1,8 @@
 
 import React from 'react'
-import { images, albumsData, assets } from '../assets/assets'
+import { images } from '../assets/js/assets'
+import { icons } from '../assets/js/icons'
+import { albumsData } from '../assets/mock/musicMockedData'
 
 
 const FancyVisualizer = ({ progress, setProgress, audioRef, changeSong, currentSongIndex, currentSongData, isFancyOpen, setFancy, isPlaying, setIsPlaying }) => {
@@ -105,7 +107,7 @@ const FancyVisualizer = ({ progress, setProgress, audioRef, changeSong, currentS
                             }
                         }}>
                             <img className={`w-16 z-50 ${isVinylOut ? "cursor-pointer opacity-50 hover:opacity-99 pointer-events-auto " : "opacity-0 pointer-events-none "} transition-all duration-200`}
-                                src={assets.icons.prev_icon} />
+                                src={icons.prev_icon} />
                         </button>
                     </div>
 
@@ -144,7 +146,7 @@ const FancyVisualizer = ({ progress, setProgress, audioRef, changeSong, currentS
                                         }
                                     }}
                                     >
-                                        <img src={!isPlaying ? assets.play_icon : assets.pause_icon} draggable={false} className='
+                                        <img src={!isPlaying ? icons.play_icon : icons.pause_icon} draggable={false} className='
                                         invert
                                         mix-blend-screen
                                         opacity-0
@@ -181,7 +183,7 @@ const FancyVisualizer = ({ progress, setProgress, audioRef, changeSong, currentS
                             audioRef.current.currentTime = 0
                         }}>
                             <img className={`w-16 z-50 cursor-pointer ${isVinylOut ? "opacity-50 hover:opacity-99 pointer-events-auto" : "opacity-0 pointer-events-none"} transition-all duration-200`}
-                                src={assets.icons.next_icon} />
+                                src={icons.next_icon} />
                         </button>
                     </div>
                 </div>

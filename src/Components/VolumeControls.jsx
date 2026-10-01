@@ -1,5 +1,5 @@
 import React from 'react'
-import { assets } from '../assets/assets';
+import { icons } from '../assets/js/icons';
 
 const VolumeControls = ({ setVolume }) => {
     const [sliderValue, setSliderValue] = React.useState(50);
@@ -31,7 +31,7 @@ const VolumeControls = ({ setVolume }) => {
     return (
         <div className={`flex flex-row align-middle items-center gap-5 w-full justify-center bg-debug/0`}>
             <button className='hover:cursor-pointer select-none' onClick={() => muteUnmute()}>
-                <img className='w-8 shrink-0' src={!muted ? assets.icons.volume_icon : assets.icons.mute_icon} />
+                <img className='w-8 shrink-0' src={!muted ? icons.volume_icon : icons.mute_icon} />
             </button>
             <input
                 type="range"
