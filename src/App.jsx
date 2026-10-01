@@ -1,13 +1,16 @@
 import React from 'react'
 
-import Sidebar from './Components/Sidebar'
-import PlayerBar from './Components/PlayerBar'
-import FancyVisualizer from './Components/FancyVisualizer'
+import { Sidebar } from './Components/Sidebar'
+import { FancyVisualizer, PlayerBar } from './Components/Player'
+import { Popup } from './Components/Misc'
+import { Display } from './Components/Display'
 
 import usePlayer from './hooks/usePlayer'
-import Display from './Components/Display'
+import { ContextMenu } from './Components/ContextMenu'
 
 const App = () => {
+
+  const [moreInfoPopup, setMoreInfoPopup] = React.useState(false)
 
   const {
     //States 
@@ -30,6 +33,15 @@ const App = () => {
 
   return (
     <>
+
+      {/* <ContextMenu /> */}
+
+      <Popup
+        moreInfoPopup={moreInfoPopup}
+        setMoreInfoPopup={setMoreInfoPopup}
+      />
+
+
       <audio
         ref={audioRef}
         src={currentSongData.file}
@@ -52,8 +64,10 @@ const App = () => {
         <div className="h-[90%] flex">
           <Sidebar
             changeSong={changeSong}
+            moreInfoPopup={moreInfoPopup}
+            setMoreInfoPopup={setMoreInfoPopup}
           />
-          <Display />
+          <Display/>
         </div>
         <PlayerBar
           progress={progress}

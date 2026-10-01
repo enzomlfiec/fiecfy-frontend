@@ -1,8 +1,8 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
-import { icons } from '../assets/js/icons'
-import { albumsData } from '../assets/mock/musicMockedData'
-import ELSD from '../scripts/ELSD'
+import { icons } from '../../assets/js/icons'
+import { albumsData } from '../../assets/mock/musicMockedData'
+import ELSD from '../../scripts/ELSD'
 
 // eslint-disable-next-line no-unused-vars
 const SidebarElement = ({ collapsed, item, index, changeSong }) => {

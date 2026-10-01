@@ -1,5 +1,5 @@
 import React from 'react'
-import { icons } from '../assets/js/icons';
+import { icons } from '../../assets/js/icons';
 
 const VolumeControls = ({ setVolume }) => {
     const [sliderValue, setSliderValue] = React.useState(50);

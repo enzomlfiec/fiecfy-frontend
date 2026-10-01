@@ -1,14 +1,15 @@
 
 import React from 'react'
-import { images } from '../assets/js/assets'
-import { icons } from '../assets/js/icons'
-import { albumsData } from '../assets/mock/musicMockedData'
+import { images } from '../../assets/js/assets'
+import { icons } from '../../assets/js/icons'
+import { albumsData } from '../../assets/mock/musicMockedData'
 
 
 const FancyVisualizer = ({ progress, setProgress, audioRef, changeSong, currentSongIndex, currentSongData, isFancyOpen, setFancy, isPlaying, setIsPlaying }) => {
 
     const [hovering, setHovering] = React.useState(false)
     const [isVinylOut, setIsVinylOut] = React.useState(false)
+    const currentAlbum = albumsData.find(album => album.id === currentSongData.album_id)
     // const [,] = React.useState(false)
 
     const toggleFullscreen = () => {
@@ -89,9 +90,9 @@ const FancyVisualizer = ({ progress, setProgress, audioRef, changeSong, currentS
             <div>
                 <div
                     style={{
-                        "--album-color": albumsData[currentSongData.album_id].bgColor
+                        "--album-color": currentAlbum.bgColor
                     }}
-                    className={`select-none ${isVinylOut ? "overlay vinyl-out" : "overlay"} shrink-0 fixed inset-0 items-center flex justify-center z-30 ${isFancyOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"} ${isVinylOut ? "backdrop-grayscale-100" : "bg-black/80 backdrop-grayscale-100"}`}
+                    className={`select-none ${isVinylOut ? "overlay vinyl-out" : "overlay"} shrink-0 fixed inset-0 items-center flex justify-center z-30 ${isFancyOpen ? "opacity-100 pointer-events-auto select-auto" : "opacity-0 pointer-events-none select-none"} ${isVinylOut ? "backdrop-grayscale-100" : "bg-black/80 backdrop-grayscale-100"}`}
                     onClick={() => clickAway()}
                 >
                     <div id="prevFancy">
@@ -129,7 +130,7 @@ const FancyVisualizer = ({ progress, setProgress, audioRef, changeSong, currentS
                             <div>
                                 <div className={`relative ${isVinylOut ? "right-[25%] pointer-events-auto" : "right-[50%] pointer-events-none"} transition-all duration-300`}>
                                     <img id="vinyl" style={{
-                                        backgroundColor: albumsData[currentSongData.album_id].bgColor
+                                        backgroundColor: currentAlbum.bgColor
                                     }} draggable={false} className={`shrink-0 flex z-10 w-150 h-150 rounded-full animate-vinyl ${isPlaying ? '[animation-play-state:running]' : '[animation-play-state:paused]'}  transition-all duration-300 cursor-none `} src={images.vinyl}
                                     />
                                     <button id="play-pause" className='m-0 p-0 bg-debug/0 w-full' onClick={() => {
@@ -160,14 +161,14 @@ const FancyVisualizer = ({ progress, setProgress, audioRef, changeSong, currentS
                         </div>
                         <p
                             style={{
-                                color: isVinylOut ? albumsData[currentSongData.album_id].bgColor : "white"
+                                color: isVinylOut ? currentAlbum.bgColor : "white"
                             }}
                             className={`${isVinylOut ? "duration-800 opacity-99" : "duration-300 opacity-0"} pr-5 pl-5 select-all text-4xl font-extrabold z-67 ${isVinylOut ? "hover:duration-100 invert grayscale-100 opacity-5 hover:opacity-100 " : "text-white hover:text-white duration-1000"} transition-all`}>{currentSongData.name}
                         </p>
 
                         <p
                             style={{
-                                color: isVinylOut ? albumsData[currentSongData.album_id].bgColor : "white"
+                                color: isVinylOut ? currentAlbum.bgColor : "white"
                             }}
                             className={`text-xl font-medium cursor-pointer hover:underline z-67 ${isVinylOut ? "hover:duration-100 invert grayscale-100 opacity-5 hover:opacity-100 " : "text-white hover:text-white duration-1000"} transition-all  `} onClick={() => setFancy(false)}>Close
                         </p>

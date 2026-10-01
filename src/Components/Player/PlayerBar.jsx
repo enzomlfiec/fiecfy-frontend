@@ -2,8 +2,8 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
 import PlayerControls from './PlayerControls'
-import { icons } from '../assets/js/icons'
-import { albumsData } from '../assets/mock/musicMockedData'
+import { icons } from '../../assets/js/icons'
+import { albumsData } from '../../assets/mock/musicMockedData'
 import VolumeControls from './VolumeControls'
 //Music Format
 
