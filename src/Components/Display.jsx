@@ -11,7 +11,7 @@ function Display() {
           aria-label="return"
           className="bg-black/50 cursor-pointer inline-flex h-10 w-10 items-center justify-center rounded-full hover:bg-white/10 transition-all duration-100"
         >
-          <ChevronLeft size={25} className="flex flex-row relative right-[2px]" aria-hidden="true" />
+          <ChevronLeft size={25} className="flex flex-row relative right-0.5" aria-hidden="true" />
         </button>
 
         <button
@@ -19,7 +19,7 @@ function Display() {
           aria-label="back"
           className="bg-black/50 cursor-pointer inline-flex h-10 w-10 items-center justify-center rounded-full hover:bg-white/10 transition-all duration-100"
         >
-          <ChevronRight size={25} className="flex flex-row relative left-[2px]" aria-hidden="true" />
+          <ChevronRight size={25} className="flex flex-row relative left-0.5" aria-hidden="true" />
         </button>
 
       </div>

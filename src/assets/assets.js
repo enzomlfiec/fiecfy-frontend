@@ -27,6 +27,38 @@ import spotify_logo from './icons/spotify_logo.png'
 import clock_icon from './icons/clock_icon.png'
 import stack_icon_alt from './icons/stack_alt.png'
 
+const icons = {
+  bell_icon,
+  home_icon,
+  like_icon,
+  loop_icon,
+  loop_icon_alt,
+  mic_icon,
+  next_icon,
+  play_icon,
+  pause_icon,
+  plays_icon,
+  prev_icon,
+  search_icon,
+  shuffle_icon,
+  shuffle_icon_alt,
+  speaker_icon,
+  stack_icon,
+  zoom_icon,
+  plus_icon,
+  arrow_icon,
+  mini_player_icon,
+  volume_icon,
+  mute_icon,
+  queue_icon,
+  arrow_left,
+  arrow_right,
+  spotify_logo,
+  clock_icon,
+  library_icon: stack_icon,
+  library_icon_alt: stack_icon_alt,
+}
+
 import img1 from './images/albums/img1.jpg'
 import img2 from './images/albums/img2.jpg'
 import img3 from './images/albums/img3.jpg'
@@ -122,38 +154,6 @@ import tusk from './music/albums/YAKUZA_0/t u s k.mp3'
 import troubleShootingStar from './music/albums/YAKUZA_0/Trouble Shooting Star.mp3'
 import twoDragons from './music/albums/YAKUZA_0/Two Dragons.mp3'
 import withVengeance from './music/albums/YAKUZA_0/With Vengeance.mp3'
-
-const icons = {
-  bell_icon,
-  home_icon,
-  like_icon,
-  loop_icon,
-  loop_icon_alt,
-  mic_icon,
-  next_icon,
-  play_icon,
-  pause_icon,
-  plays_icon,
-  prev_icon,
-  search_icon,
-  shuffle_icon,
-  shuffle_icon_alt,
-  speaker_icon,
-  stack_icon,
-  zoom_icon,
-  plus_icon,
-  arrow_icon,
-  mini_player_icon,
-  volume_icon,
-  mute_icon,
-  queue_icon,
-  arrow_left,
-  arrow_right,
-  spotify_logo,
-  clock_icon,
-  library_icon: stack_icon,
-  library_icon_alt: stack_icon_alt,
-}
 
 const albumCovers = {
   img1,
