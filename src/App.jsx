@@ -6,7 +6,7 @@ import { Popup } from './Components/Misc'
 import { Display } from './Components/Display'
 
 import usePlayer from './hooks/usePlayer'
-import { ContextMenu } from './Components/ContextMenu'
+// import { ContextMenu } from './Components/ContextMenu'
 
 const App = () => {
 
@@ -33,8 +33,6 @@ const App = () => {
 
   return (
     <>
-
-      {/* <ContextMenu /> */}
 
       <Popup
         moreInfoPopup={moreInfoPopup}
@@ -67,7 +65,12 @@ const App = () => {
             moreInfoPopup={moreInfoPopup}
             setMoreInfoPopup={setMoreInfoPopup}
           />
-          <Display/>
+          <Display
+            currentSongData={currentSongData}
+            setCurrentSongData={setCurrentSongData}
+            currentSongIndex={currentSongIndex}
+            setCurrentSongIndex={setCurrentSongIndex}
+          />
         </div>
         <PlayerBar
           progress={progress}

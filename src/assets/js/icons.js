@@ -27,9 +27,11 @@ import spotify_logo from '../icons/spotify_logo.png'
 import clock_icon from '../icons/clock_icon.png'
 import stack_icon_alt from '../icons/stack_alt.png'
 import github_icon from '../icons/github-white-icon.webp'
+import linkedIn_icon from '../icons/linkedin.png'
 
 const icons = {
     github_icon,
+    linkedIn_icon,
     bell_icon,
     home_icon,
     like_icon,

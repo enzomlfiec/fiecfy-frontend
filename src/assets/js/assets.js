@@ -5,7 +5,7 @@ import vinyl from '../images/FancyVisualizer/vinyl.png'
 import logoIcon from '../images/FiecfyIcon.png'
 
 //User
-import defaultUserPFP from '../images/User/default.jpg'
+import defaultPFP from '../images/User/default.jpg'
 
 //Credits
 import creditsIcon from '../images/px.png'
@@ -15,7 +15,7 @@ const images = {
   vinyl,
   logoIcon,
   creditsIcon,
-  defaultUserPFP,
+  defaultPFP,
 }
 
 export { images }

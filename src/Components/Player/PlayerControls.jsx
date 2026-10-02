@@ -39,7 +39,7 @@ const PlayerControls = ({ changeSong, progress, setProgress, currentSongData, se
                 }}
 
                 >
-                    <img className='w-8 cursor-pointer hover:opacity-50 hover:w-8.25 transition-all duration-200' src={isPlaying ? icons.pause_icon : icons.play_icon} alt={isPlaying ? "Pause" : "Play"} />
+                    <img className='w-8 cursor-pointer hover:opacity-50 hover:w-8.25 transition-all duration-200' src={isPlaying ? icons.pause_icon : icons.play_icon} alt={isPlaying ? "Pausar" : "Reproduzir"} />
                 </button>
 
                 <button id="next" onClick={() => {

@@ -6,9 +6,9 @@
   --color-debug: #ff00ff;
 
   --color-p_0: #00DB72;
-  --color-p_01: #00B768;
-  --color-p_02: #007A61;
-  --color-p_03: #005B5F;
+  --color-p_01: #00C164;
+  --color-p_02: #00965D;
+  --color-p_03: #005B4D;
 
   --color-bg_0: #030303;
   --color-bg_01: #0A0A0A;
@@ -26,6 +26,32 @@
   /* Vinyl */
 
   --animate-vinyl: spin 5s linear infinite;
+
+  --animate-fade-in-blur: fade-in-blur 10s ease-out;
+
+  --animate-marquee: marquee 5s linear 0.5s infinite;
+
+  @keyframes marquee {
+    from {
+      left: 0;
+    }
+
+    to {
+      left: -100%;
+    }
+  }
+
+  @keyframes fade-in-blur {
+    from {
+      opacity: 0;
+      filter: blur(100px);
+    }
+
+    to {
+      opacity: 1;
+      filter: blur(0);
+    }
+  }
 }
 
 html {
@@ -137,7 +163,7 @@ html {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, #000000, var(--album-color));
+  /* background: linear-gradient(to bottom, #000000 0%, var(--album-color) 100%); */
   opacity: 0;
   transition: opacity 500ms ease;
   pointer-events: none;
@@ -147,42 +173,36 @@ html {
   opacity: 1;
 }
 
-.playlist-scroll::-webkit-scrollbar {
+.square-scroll::-webkit-scrollbar {
   width: 10px;
 }
 
-.playlist-scroll::-webkit-scrollbar-track {
+.invisible-scroll::-webkit-scrollbar {
+  width: 0px;
+}
+
+.square-scroll::-webkit-scrollbar-track {
   background: transparent;
 }
 
-.playlist-scroll::-webkit-scrollbar-thumb {
+.square-scroll::-webkit-scrollbar-thumb {
   background: var(--color-bg_03);
   opacity: 10%;
   border-radius: 0;
   transition: all 0.4s ease-in-out;
 }
 
-.playlist-scroll::-webkit-scrollbar-thumb:hover {
+.square-scroll::-webkit-scrollbar-thumb:hover {
   background: var(--color-fg_03);
   opacity: 100%;
   border-radius: 0;
 }
 
-.hideMouse{
+.hideMouse {
   cursor: none !important;
 }
 
-
-@theme {
-    --animate-fade-in: fade-in 0.5s ease-out;
-
-    @keyframes fade-in {
-        from {
-            opacity: 0;
-        }
-
-        to {
-            opacity: 1;
-        }
-    }
+::selection {
+  background: var(--color-p_0);
+  color: #000;
 }

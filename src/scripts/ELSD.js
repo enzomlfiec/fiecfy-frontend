@@ -3,85 +3,97 @@ const ELSDWriteIfnonExistent = true
 const ELSDAutoParseItemValue = true
 const ELSDPreventUndefinedValues = true
 
-function EasyLocalStorageData(
-    action = "r",
-    item = "",
-    content = undefined,
-    logs = ELSDLogs,
-    preventUndefinedValues = ELSDPreventUndefinedValues,
-    writeIfnonExistent = ELSDWriteIfnonExistent,
-    autoParseItemValue = ELSDAutoParseItemValue,
-) {
+const ELSD = {
 
-    const actionLower = action.toLowerCase()
-
-    if (
-        actionLower === "read" ||
-        actionLower === "r" ||
-        actionLower === "get" ||
-        actionLower === "getitem"
+    read(
+        item = "",
+        defaultValue = undefined,
+        logs = ELSDLogs,
+        preventUndefinedValues = ELSDPreventUndefinedValues,
+        writeIfnonExistent = ELSDWriteIfnonExistent,
+        autoParseItemValue = ELSDAutoParseItemValue,
     ) {
 
         const storedItem = localStorage.getItem(item)
+
         if (storedItem !== null) {
+
             if (autoParseItemValue) {
-                const parsedItem = JSON.parse(storedItem)
-
-                if (preventUndefinedValues && parsedItem === undefined) {
-                    return content
-                }
-
-                return parsedItem
-            } else {
-                return storedItem
+                return JSON.parse(storedItem)
             }
+
+            return storedItem
+        }
+
+        if (logs) {
+            console.log(
+                `ELSD: The item ${item} was not found. ` +
+                `${writeIfnonExistent
+                    ? "Writing the default value instead."
+                    : "Returning undefined instead."
+                }`
+            )
         }
 
         if (writeIfnonExistent) {
-            if (preventUndefinedValues && content === undefined) {
+
+            if (preventUndefinedValues && defaultValue === undefined) {
                 return null
             }
 
-            localStorage.setItem(item, JSON.stringify(content))
-            return content
-        }
+            localStorage.setItem(
+                item,
+                JSON.stringify(defaultValue)
+            )
 
-        logs && console.log(
-            `ELSD: The item ${item} was not found. ` + `${writeIfnonExistent ? "Writing it in instead." : "Returning an undefined value instead."}`
-        )
-        if (writeIfnonExistent) {
-            localStorage.setItem(item, JSON.stringify(content))
-            return content
+            return defaultValue
         }
 
         return undefined
-    }
+    },
 
-    if (
-        actionLower === "write" ||
-        actionLower === "w" ||
-        actionLower === "set" ||
-        actionLower === "setitem"
+    write(
+        item = "",
+        content = undefined,
+        logs = ELSDLogs,
+        preventUndefinedValues = ELSDPreventUndefinedValues,
     ) {
 
-
         try {
+
             if (preventUndefinedValues && content === undefined) {
-                console.log(`ELSD:  ${item} was NOT written as the default content format (${content}) because the preventUndefinedValues setting was enabled.`)
-                return localStorage.getItem(item)
-            } else {
-                localStorage.setItem(item, JSON.stringify(content))
-                if(logs == true){
-                    console.log(`ELSD: The item ${item} was written as ${content}.`)
+
+                if (logs) {
+                    console.log(
+                        `ELSD: ${item} was NOT written because preventUndefinedValues is enabled.`
+                    )
                 }
+
+                return localStorage.getItem(item)
             }
+
+            localStorage.setItem(
+                item,
+                JSON.stringify(content)
+            )
+
+            if (logs) {
+                console.log(
+                    `ELSD: The item ${item} was written as ${content}.`
+                )
+            }
+
+            return content
+
         } catch (error) {
+
             console.error(
                 `ELSD: The item ${item} could not be written.`
             )
+
             console.error(error)
         }
     }
 }
 
-export default EasyLocalStorageData
+export default ELSD

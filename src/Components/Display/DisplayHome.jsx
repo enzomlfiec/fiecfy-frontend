@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom'
 
 function DisplayHome() {
     return (
-        <Route path='/' element={<DisplayHome/>}/>
+        <Route path='/' element={<DisplayHome />} />
   )
 }
 

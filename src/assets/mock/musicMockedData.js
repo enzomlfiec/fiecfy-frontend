@@ -192,7 +192,7 @@ export const albumsData = [
 
     {
         id: 1,
-        name: 'Aratamemashite, Hajimemashite, Midori desu',
+        name: 'Aratamemashite, Hajimemashite, Midori desu.',
         artist: 'ミドリ',
         image: albumCovers.img2,
         desc: 'Aratamemashite, Hajimemashite, Midori desu by Midori',

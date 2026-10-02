@@ -7,7 +7,7 @@ import ELSD from '../../scripts/ELSD'
 const PlayerProgressBar = ({ isPlaying, isLooping, progress, setProgress, currentSongData, currentSongIndex, audioRef }) => {
     const [hovering, setHovering] = React.useState(false)
     const [hoveredPosition, setHoveringPosition] = React.useState(0)
-    // const [playerProgress, setPlayerProgress] = React.useState(ELSD("r", "lastProgress", "0"))
+    // const [playerProgress, setPlayerProgress] = React.useState(ELSD.read("lastProgress", "0"))
 
     let fullProgressString = currentSongData?.duration || "1:40";    // let fullProgressString = "1:00"
 
@@ -44,7 +44,7 @@ const PlayerProgressBar = ({ isPlaying, isLooping, progress, setProgress, curren
                     return audioRef.current.currentTime
                 }
             });
-            ELSD("w", "lastProgress", progress)
+            ELSD.write("lastProgress", progress)
         }, 300);
         return () => clearInterval(interval);
     }, [isPlaying, isLooping, setProgress, currentSongData, fullProgress, currentSongIndex, audioRef, progress]);

@@ -13,19 +13,19 @@ import VolumeControls from './VolumeControls'
 // desc: 'x',
 // bgColor: '#x',
 ``
-const PlayerBar = ({progress, setProgress, changeSong, currentSongData, setCurrentSongData, currentSongIndex, setCurrentSongIndex, isFancyOpen, setFancy, isPlaying, setIsPlaying, isLooping, setIsLooping, inShuffle, setInShuffle, audioRef , volume, setVolume}) => {
+const PlayerBar = ({ progress, setProgress, changeSong, currentSongData, setCurrentSongData, currentSongIndex, setCurrentSongIndex, isFancyOpen, setFancy, isPlaying, setIsPlaying, isLooping, setIsLooping, inShuffle, setInShuffle, audioRef, volume, setVolume }) => {
     return (
         <>
             <div id="player" className="bg-abw_0 h-[10%] flex items-center justify-between text-abw_1 px-4">
-                <div id="SongInfo" className="hidden xl:flex item-center gap-4 w-[20vw]">
+                <div id="SongInfo" className="flex item-center gap-4 w-[20vw]">
                     <div className="group flex bg-black select-none">
-                        <img className="shrink-0 absolute bottom-[2.2%] left-[1.5%] items-center w-[2.5vw] h-[2.5vw] max-w-[2.5vw] min-w-[2.5vw] rounded cursor-pointer opacity-0 group-hover:opacity-100 transition-all duration-300" src={icons.zoom_icon} alt="uparrow" onClick={() => (setFancy(!isFancyOpen))} />
-                        <img className="shrink-0 items-center w-[4vw] h-[4vw] rounded cursor-pointer hover:opacity-30 hover:m-0 transition-all duration-300" src={albumsData.find(album => album.id === currentSongData.album_id).image} alt="Album Cover" onClick={() => setFancy(!isFancyOpen)} />
+                        <img className="shrink-0 absolute bottom-[2.2%] left-[1.5%] items-center w-[2.5vw] h-[2.5vw] max-w-[2.5vw] min-w-[2.5vw] rounded cursor-pointer opacity-0 group-hover:opacity-100 transition-all duration-300" src={icons.zoom_icon} alt="Abrir visualizador" onClick={() => (setFancy(!isFancyOpen))} />
+                        <img className="shrink-0 items-center h-18 aspect-square min-w-18 rounded cursor-pointer hover:opacity-30 hover:m-0 transition-all duration-300" src={albumsData.find(album => album.id === currentSongData.album_id).image} alt="Capa do álbum" onClick={() => setFancy(!isFancyOpen)} />
                     </div>
 
-                    <div className='flex justify-center flex-col'>
-                        <p className=" font-bold cursor-pointer hover:mr-0 hover:underline">{currentSongData.name}</p>
-                        <p className=" cursor-pointer text-fg_03 hover:underline hover:text-abw_1 transition-all duration-100">{currentSongData.artist}</p>
+                    <div className='flex justify-center flex-col text-ellipsis min-w-0'>
+                        <p className=" truncate font-bold cursor-pointer hover:mr-0 hover:underline">{currentSongData.name}</p>
+                        <p className=" truncate cursor-pointer text-fg_03 hover:underline hover:text-abw_1 transition-all duration-100">{currentSongData.artist}</p>
                     </div>
                 </div>
                 <div className='flex xl:hidden'>

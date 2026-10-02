@@ -29,7 +29,7 @@ const VolumeControls = ({ setVolume }) => {
     }
 
     return (
-        <div className={`flex flex-row align-middle items-center gap-5 w-full justify-center bg-debug/0`}>
+        <div className={`flex flex-row  items-center gap-5 w-full justify-center bg-debug/0`}>
             <button className='hover:cursor-pointer select-none' onClick={() => muteUnmute()}>
                 <img className='w-8 shrink-0' src={!muted ? icons.volume_icon : icons.mute_icon} />
             </button>

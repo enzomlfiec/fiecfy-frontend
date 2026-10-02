@@ -1,0 +1,66 @@
+const spinningIconFrames = [ //60 Frames
+    "src/assets/images/FramesSpinningIcon/frame_00_delay-0.02s.png", //0 even
+    "src/assets/images/FramesSpinningIcon/frame_01_delay-0.02s.png", //1 odd
+    "src/assets/images/FramesSpinningIcon/frame_02_delay-0.02s.png", //2 even
+    "src/assets/images/FramesSpinningIcon/frame_03_delay-0.02s.png", //3 odd
+    "src/assets/images/FramesSpinningIcon/frame_04_delay-0.02s.png", //4 even
+    "src/assets/images/FramesSpinningIcon/frame_05_delay-0.02s.png", //5 odd
+    "src/assets/images/FramesSpinningIcon/frame_06_delay-0.02s.png", //6 even
+    "src/assets/images/FramesSpinningIcon/frame_07_delay-0.02s.png", //7 odd
+    "src/assets/images/FramesSpinningIcon/frame_08_delay-0.02s.png", //8 even
+    "src/assets/images/FramesSpinningIcon/frame_09_delay-0.02s.png", //9 odd
+    "src/assets/images/FramesSpinningIcon/frame_10_delay-0.02s.png", //10 even
+    "src/assets/images/FramesSpinningIcon/frame_11_delay-0.02s.png", //11 odd
+    "src/assets/images/FramesSpinningIcon/frame_12_delay-0.02s.png", //12 even
+    "src/assets/images/FramesSpinningIcon/frame_13_delay-0.02s.png", //13 odd
+    "src/assets/images/FramesSpinningIcon/frame_14_delay-0.02s.png", //14 even
+    "src/assets/images/FramesSpinningIcon/frame_15_delay-0.02s.png", //15 odd
+    "src/assets/images/FramesSpinningIcon/frame_16_delay-0.02s.png", //16 even
+    "src/assets/images/FramesSpinningIcon/frame_17_delay-0.02s.png", //17 odd
+    "src/assets/images/FramesSpinningIcon/frame_18_delay-0.02s.png", //18 even
+    "src/assets/images/FramesSpinningIcon/frame_19_delay-0.02s.png", //19 odd
+    "src/assets/images/FramesSpinningIcon/frame_20_delay-0.02s.png", //20 even
+    "src/assets/images/FramesSpinningIcon/frame_21_delay-0.02s.png", //21 odd
+    "src/assets/images/FramesSpinningIcon/frame_22_delay-0.02s.png", //22 even
+    "src/assets/images/FramesSpinningIcon/frame_23_delay-0.02s.png", //23 odd
+    "src/assets/images/FramesSpinningIcon/frame_24_delay-0.02s.png", //24 even
+    "src/assets/images/FramesSpinningIcon/frame_25_delay-0.02s.png", //25 odd
+    "src/assets/images/FramesSpinningIcon/frame_26_delay-0.02s.png", //26 even
+    "src/assets/images/FramesSpinningIcon/frame_27_delay-0.02s.png", //27 odd
+    "src/assets/images/FramesSpinningIcon/frame_28_delay-0.02s.png", //28 even
+    "src/assets/images/FramesSpinningIcon/frame_29_delay-0.02s.png", //29 odd
+    "src/assets/images/FramesSpinningIcon/frame_30_delay-0.02s.png", //30 even
+    "src/assets/images/FramesSpinningIcon/frame_31_delay-0.02s.png", //31 odd
+    "src/assets/images/FramesSpinningIcon/frame_32_delay-0.02s.png", //32 even
+    "src/assets/images/FramesSpinningIcon/frame_33_delay-0.02s.png", //33 odd
+    "src/assets/images/FramesSpinningIcon/frame_34_delay-0.02s.png", //34 even
+    "src/assets/images/FramesSpinningIcon/frame_35_delay-0.02s.png", //35 odd
+    "src/assets/images/FramesSpinningIcon/frame_36_delay-0.02s.png", //36 even
+    "src/assets/images/FramesSpinningIcon/frame_37_delay-0.02s.png", //37 odd
+    "src/assets/images/FramesSpinningIcon/frame_38_delay-0.02s.png", //38 even
+    "src/assets/images/FramesSpinningIcon/frame_39_delay-0.02s.png", //39 odd
+    "src/assets/images/FramesSpinningIcon/frame_40_delay-0.02s.png", //40 even
+    "src/assets/images/FramesSpinningIcon/frame_41_delay-0.02s.png", //41 odd
+    "src/assets/images/FramesSpinningIcon/frame_42_delay-0.02s.png", //42 even
+    "src/assets/images/FramesSpinningIcon/frame_43_delay-0.02s.png", //43 odd
+    "src/assets/images/FramesSpinningIcon/frame_44_delay-0.02s.png", //44 even
+    "src/assets/images/FramesSpinningIcon/frame_45_delay-0.02s.png", //45 odd
+    "src/assets/images/FramesSpinningIcon/frame_46_delay-0.02s.png", //46 even
+    "src/assets/images/FramesSpinningIcon/frame_47_delay-0.02s.png", //47 odd
+    "src/assets/images/FramesSpinningIcon/frame_48_delay-0.02s.png", //48 even
+    "src/assets/images/FramesSpinningIcon/frame_49_delay-0.02s.png", //49 odd
+    "src/assets/images/FramesSpinningIcon/frame_50_delay-0.02s.png", //50 even
+    "src/assets/images/FramesSpinningIcon/frame_51_delay-0.02s.png", //51 odd
+    "src/assets/images/FramesSpinningIcon/frame_52_delay-0.02s.png", //52 even
+    "src/assets/images/FramesSpinningIcon/frame_53_delay-0.02s.png", //53 odd
+    "src/assets/images/FramesSpinningIcon/frame_54_delay-0.02s.png", //54 even
+    "src/assets/images/FramesSpinningIcon/frame_55_delay-0.02s.png", //55 odd
+    "src/assets/images/FramesSpinningIcon/frame_56_delay-0.02s.png", //56 even
+    "src/assets/images/FramesSpinningIcon/frame_57_delay-0.02s.png", //57 odd
+    "src/assets/images/FramesSpinningIcon/frame_58_delay-0.02s.png", //58 even
+    "src/assets/images/FramesSpinningIcon/frame_59_delay-0.02s.png", //59 odd
+    "src/assets/images/FramesSpinningIcon/frame_60_delay-0.02s.png", //60
+
+];
+
+export default spinningIconFrames;
