@@ -1,4 +1,5 @@
 //Images
+import placeholder from '../images/Album Covers/placeholder.jpg'
 
 //FancyVisualizer
 import vinyl from '../images/FancyVisualizer/vinyl.png'
@@ -16,6 +17,7 @@ const images = {
   logoIcon,
   creditsIcon,
   defaultPFP,
+  placeholder,
 }
 
 export { images }

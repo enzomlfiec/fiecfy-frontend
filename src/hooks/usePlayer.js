@@ -39,7 +39,7 @@ const usePlayer = () => {
             if (i >= spinningIconFrames.length) {
                 i = 0;
             }
-            timeout = setTimeout(contar, 150);
+            timeout = setTimeout(contar, 70);
         }
 
         contar();

@@ -93,7 +93,6 @@ const albumCovers = {
     img5,
     img6,
     img7,
-
 }
 
 export { albumCovers }

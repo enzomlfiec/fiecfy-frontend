@@ -4,9 +4,9 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { images } from '../../assets/js/assets'
 import ELSD from '../../scripts/ELSD'
 import { albumsData } from '../../assets/mock/musicMockedData'
-import TrackInfoBullet from './TrackInfo/Skeletons/TrackInfoBulletSkeleton'
+import TrackInfoBullet from './TrackInfo/TrackInfoBullet'
 import { ContextMenu } from '../ContextMenu/ContextMenu'
-import TrackInfoCard from './TrackInfo/Skeletons/TrackInfoCardSkeleton'
+import TrackInfoCardTrain from './TrackInfo/TrackInfoCardTrain'
 
 function getTimeOfDay(hour = getTimeOfDay(new Date().getHours())) {
   if (hour >= 18 || hour < 6) return "Boa noite";
@@ -39,21 +39,6 @@ function Display({
   }
 
   const profileRef = React.useRef(null)
-  const scrollRef = React.useRef(null)
-
-  function scrollLeft() {
-    scrollRef.current?.scrollBy({
-      left: -1500,
-      behavior: "smooth"
-    })
-  }
-
-  function scrollRight() {
-    scrollRef.current?.scrollBy({
-      left: 1500,
-      behavior: "smooth"
-    })
-  }
 
   return (
     <span
@@ -100,71 +85,11 @@ function Display({
           Recomendados para você
         </h2>
 
-        <div className='flex flex-row relative justify-center items-center'>
-          <button
-            onClick={scrollLeft}
-            className='absolute left-0 flex z-1 bg-black/80 opacity-50 hover:opacity-100 cursor-pointer h-12 w-12 justify-center items-center rounded-full top-[50%] '>
-            <ChevronLeft />
-          </button>
-          <div
-            ref={scrollRef}
-            className="w-full overflow-x-auto scroll-smooth square-scroll mb-5 py-2">
-            <div className="flex flex-row gap-4 w-max">
-              {[...Array(100)].map((_, i) => (
-                <TrackInfoCard key={i} />
-              ))}
-            </div>
-          </div>
-          <button
-            onClick={scrollRight}
-            className='absolute right-0 flex z-1 bg-black/80 opacity-50 hover:opacity-100 cursor-pointer h-12 w-12 justify-center items-center rounded-full top-[50%] '>
-            <ChevronRight />
-          </button>
-        </div>
+        <TrackInfoCardTrain />
+        <TrackInfoCardTrain />
+        <TrackInfoCardTrain />
+        <TrackInfoCardTrain />
 
-        <div className='flex flex-row relative justify-center items-center'>
-          <button
-            onClick={scrollLeft}
-            className='absolute left-0 flex z-1 bg-black/80 opacity-50 hover:opacity-100 cursor-pointer h-12 w-12 justify-center items-center rounded-full top-[50%] '>
-            <ChevronLeft />
-          </button>
-          <div
-            ref={scrollRef}
-            className="w-full overflow-x-auto scroll-smooth square-scroll mb-5 py-2">
-            <div className="flex flex-row gap-4 w-max">
-              {[...Array(100)].map((_, i) => (
-                <TrackInfoCard key={i} />
-              ))}
-            </div>
-          </div>
-          <button
-            onClick={scrollRight}
-            className='absolute right-0 flex z-1 bg-black/80 opacity-50 hover:opacity-100 cursor-pointer h-12 w-12 justify-center items-center rounded-full top-[50%] '>
-            <ChevronRight />
-          </button>
-        </div>
-
-        <div className='flex flex-row relative justify-center items-center'>
-          <button
-            onClick={scrollLeft}
-            className='absolute left-0 flex z-1 bg-black/80 opacity-50 hover:opacity-100 cursor-pointer h-12 w-12 justify-center items-center rounded-full top-[50%] '>
-            <ChevronLeft />
-          </button>
-          <div
-            ref={scrollRef}
-            className="w-full overflow-x-auto scroll-smooth square-scroll mb-5 py-2">
-            <div className="flex flex-row gap-4 w-max">
-              {[...Array(100)].map((_, i) => (
-                <TrackInfoCard key={i} />
-              ))}
-            </div>
-          </div>
-          <button
-            onClick={scrollRight}
-            className='absolute right-0 flex z-1 bg-black/80 opacity-50 hover:opacity-100 cursor-pointer h-12 w-12 justify-center items-center rounded-full top-[50%] '>
-            <ChevronRight />
-          </button>
-        </div>
       </main>
     </span >
   )

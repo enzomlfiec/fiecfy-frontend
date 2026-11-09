@@ -330,11 +330,16 @@ const FancyVisualizer = ({
                             />
                             <div>
                                 <div className={`relative ${isVinylOut ? 'right-[25%] pointer-events-auto' : 'right-[50%] pointer-events-none'} transition-all duration-300`}>
+                                    <p className='hidden bg-debug z-100 relative'>{smoothReactiveValue}</p>
                                     <img
                                         id="vinyl"
-                                        style={{ backgroundColor: currentAlbum.bgColor }}
+                                        style={{
+                                            // transform: `rotate(${ smoothReactiveValue * 3.6}deg)`,
+                                            backgroundColor: currentAlbum.bgColor,
+                                            "--animate-vinyl": `spin ${10 - (smoothReactiveValue/12000)}s linear infinite`
+                                        }}
                                         draggable={false}
-                                        className={`shrink-0 flex z-10 min-w-150 min-h-150 w-150 h-150 rounded-full animate-vinyl ${isPlaying ? '[animation-play-state:running]' : '[animation-play-state:paused]'} transition-all duration-300 cursor-none`}
+                                        className={`shrink-0 flex z-10 min-w-150 min-h-150 w-150 h-150 animate-vinyl rounded-full ${isPlaying ? '[animation-play-state:running]' : '[animation-play-state:paused]'} transition-all duration-300 cursor-none`}
                                         src={images.vinyl}
                                     />
                                     <button
